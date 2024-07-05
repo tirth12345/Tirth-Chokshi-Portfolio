@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="Images/Design_portfolio.png">
     <link rel="stylesheet" href="CSS\HomePage.css">
     <title>Portfolio</title>
 </head>
@@ -13,6 +12,7 @@
             <a href="HomePage.html">Home</a>
             <a href="About.html">About Me</a>
             <a href="Project.html">Projects</a>
+            <a href="Blogs.html">Blogs</a>
             <a href="Contact.html">Contact Me</a>
         </div>
     </header>
@@ -20,8 +20,8 @@
         <div class="inner-left">
            <h1 style="font-weight: bold;">Hello!</h1> 
             
-<p>I’m <b><i>Tirth Chokshi</i></b>, a
-    <br> passionate Front-End <br>Developer and UI/UX <br>Designer based in <b><i>Gujarat, India</i></b>,<br> With a keen eye for aesthetics <br>and a love for clean, user-friendly <br>interfaces, I create delightful <br>digital experiences. My journey <br> began with coding HTML and <br> CSS, and over the years, I’ve <br>honed my skills in JavaScript,<br> responsive design, and<br> performance optimization. <br> Whether it’s crafting pixel-perfect <br>layouts or enhancing user<br> interactions, I thrive on turning <br>ideas into reality. Let’s collaborate<br> and bring your vision to life!</p>
+<h4>I’m <i>Tirth Chokshi</i>, a
+    <br> passionate Front-End <br>Developer and UI/UX <br>Designer based in <i>Gujarat, India</i>,<br> With a keen eye for aesthetics <br>and a love for clean, user-friendly <br>interfaces, I create delightful <br>digital experiences. My journey <br> began with coding HTML and <br> CSS, and over the years, I’ve <br>honed my skills in JavaScript,<br> responsive design, and<br> performance optimization. <br> Whether it’s crafting pixel-perfect <br>layouts or enhancing user<br> interactions, I thrive on turning <br>ideas into reality. Let’s collaborate<br> and bring your vision to life!</h4>
 
         </div>
         <div class="inner-right">
