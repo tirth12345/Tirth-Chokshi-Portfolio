@@ -36,19 +36,33 @@
         role="banner"
         class="navbar-logo-left-container shadow-three w-nav"
       >
+      <div class="hamburger" onclick="toggleNav()" style="margin-top: 30px;">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="sidenav">
+      <br><br><br>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="Services.html" class="nav-link">About</a>
+      <a href="Pricing.html" class="nav-link">Projects</a
+        >
+      <a href="Contact.html" class="nav-link">Contact Us</a>
+      <button class="button-primary w-button" style="margin-left: 23px; margin-top: 10px;" onclick="window.location.href = 'TirthChokshiResume.pdf';">Download<br />resume</button>
+  </div>
         <div class="container">
           <div class="navbar-wrapper">
             <nav role="navigation" class="nav-menu-wrapper-2 w-nav-menu">
               <ul role="list" class="nav-menu-two w-list-unstyled">
-                <li><a href="#" class="nav-link">Home</a></li>
-                <li><a href="#" class="nav-link">About</a></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="About.html" class="nav-link">About</a></li>
                 <li>
-                  <a href="#" class="nav-link">Projects</a
-                  ><a href="#" class="nav-link">Contact Us</a>
+                  <a href="Project.html" class="nav-link">Projects</a
+                  ><a href="Contact.html" class="nav-link">Contact Us</a>
                 </li>
                 <li><div class="nav-divider"></div></li>
                 <li class="mobile-margin-top-10">
-                  <a href="#" class="button-primary w-button"
+                  <a  class="button-primary w-button" onclick="window.location.href = 'TirthChokshiResume.pdf';"
                     >Download<br />resume<br
                   /></a>
                 </li>
@@ -80,7 +94,7 @@
                 vision!</strong
               >
             </p>
-            <a href="#" class="button-primary-2 w-button">About me</a>
+            <a href="About.html" class="button-primary-2 w-button">About me</a>
           </div>
           <div class="hero-split">
             <img
@@ -94,7 +108,7 @@
       </div>
     </section>
     <script
-      src="try.js"
+      src="JS/HomePage.js"
       type="text/javascript"
     ></script>
   </body>

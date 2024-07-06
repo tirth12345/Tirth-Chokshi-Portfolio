@@ -2694,17 +2694,16 @@
   Lt();
   Mt();
 })();
-/*!
- * tram.js v0.8.2-global
- * Cross-browser CSS3 transitions in JavaScript
- * https://github.com/bkwld/tram
- * MIT License
- */
-/*!
- * Webflow._ (aka) Underscore.js 1.6.0 (custom build)
- *
- * http://underscorejs.org
- * (c) 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- * Underscore may be freely distributed under the MIT license.
- * @license MIT
- */
+
+
+function toggleNav() {
+  var sidenav = document.querySelector('.sidenav');
+  var hamburger = document.querySelector('.hamburger');
+  if (sidenav.style.width === '200px') {
+      sidenav.style.width = '0';
+      hamburger.classList.remove('active');
+  } else {
+      sidenav.style.width = '200px';
+      hamburger.classList.add('active');
+  }
+}
