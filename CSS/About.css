@@ -2102,6 +2102,11 @@ textarea.w-input, textarea.w-select {
   margin-right: auto;
 }
 
+.margin-resume{
+  margin-left: 90px;
+
+}
+
 .navbar-wrapper {
   justify-content: flex-end;
   align-items: center;
@@ -2397,6 +2402,10 @@ textarea.w-input, textarea.w-select {
   .container {
     max-width: 728px;
     margin-left: auto;
+  }
+
+  .margin-resume{
+    margin-left: 0px;
   }
 
   .nav-menu-wrapper {
