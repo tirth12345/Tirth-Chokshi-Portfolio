@@ -2098,7 +2098,7 @@ textarea.w-input, textarea.w-select {
 .container {
   width: 100%;
   max-width: 940px;
-  margin-left: auto;
+  margin-left: 130px;
   margin-right: auto;
 }
 
