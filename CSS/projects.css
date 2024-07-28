@@ -333,7 +333,7 @@ html {
     padding: 0;
     list-style-type: disc;
     transition: none;
-    display: none;
+    display: block;
     position: static;
     top: auto;
     bottom: auto;
