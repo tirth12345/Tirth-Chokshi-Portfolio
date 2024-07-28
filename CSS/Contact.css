@@ -790,6 +790,10 @@ html {
   }
   
   @media screen and (max-width: 991px) {
+
+    .w-input{
+      width: 100%;
+    }
     .w-container {
       max-width: 728px;
     }
