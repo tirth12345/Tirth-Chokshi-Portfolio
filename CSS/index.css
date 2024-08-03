@@ -2339,6 +2339,17 @@ html {
     width: 500px;
     height: 500px;
   }
+
+  .project-child.project_img.project_img_3rd {
+    background-color: rgba(0, 0, 0, 0);
+    /*  background stored in device */
+    background-image: url("https://uploads-ssl.webflow.com/66a54ec37843648bf2e2270b/66add317f6af3d2b7da1ac6b_Design%201.png");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 500px;
+    height: 500px;
+  }
   
   .project-child.project_img.project_img_myocum {
     background-color: rgba(0, 0, 0, 0);
@@ -2525,7 +2536,20 @@ html {
     position: relative;
     overflow: hidden;
   }
-  
+  .resume_btn {
+    background-color: #f28974;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50%;
+    height: 100%;
+    padding-left: 50px;
+    font-size: 18px;
+    text-decoration: none;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+  }
   .contact_btn {
     color: var(--main-font);
     background-color: #f5f7fb;
