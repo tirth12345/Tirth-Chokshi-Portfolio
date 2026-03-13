@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tirth Chokshi | FullStack Developer & ML Engineer</title>
+  <meta name="description"
+    content="Tirth Chokshi – FullStack Developer and Machine Learning Engineer based in Ahmedabad, India. Specialized in React, Node.js, Python, TensorFlow, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- GSAP for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+  <!-- ───────────────── NAVIGATION ───────────────── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>TC<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#blog" class="nav-link">Blog</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li>
+          <a href="TirthChokshi_Resume.pdf" download class="nav-resume-btn" ,target='_blank'>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            Resume
+          </a>
+        </li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ───────────────── HERO ───────────────── -->
+  <section id="home" class="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Available for opportunities
+      </div>
+      <h1 class="hero-title">
+        <span class="hero-greeting">Hi, I'm</span>
+        <span class="hero-name">Tirth Chokshi</span>
+      </h1>
+      <div class="hero-roles">
+        <span class="role-text" id="role-text">FullStack Developer</span>
+      </div>
+      <p class="hero-desc">
+        Dedicated developer & ML engineer building intelligent web experiences.
+        I craft scalable full-stack applications and train ML models that solve real-world problems.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">
+          View My Work
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://github.com/tirth12345" target="_blank" class="social-icon" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/tirth-chokshi-44b355295" target="_blank" class="social-icon" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+        </a>
+        <a href="mailto:tirthchokshi20@gmail.com" class="social-icon" title="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+        </a>
+        <a href="https://leetcode.com/tirthchokshi20" target="_blank" class="social-icon" title="LeetCode">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.097c.91-.912 2.378-.912 3.289 0l.023.024c.38.378.475.577.849.577.spaces 0 .695-.236.936-.477l.055-.053a1.376 1.376 0 0 0-.005-1.948 5.232 5.232 0 0 0-7.318-.038z" />
+            <path
+              d="M20.245 9.338a1.375 1.375 0 0 0-.004-1.952l-4.277-4.193a5.929 5.929 0 0 0-1.33-.993 5.55 5.55 0 0 0-1.197-.403 5.398 5.398 0 0 0-1.164-.12 5.34 5.34 0 0 0-2.35.551 5.517 5.517 0 0 0-.986.605 1.375 1.375 0 0 0 1.671 2.184 2.713 2.713 0 0 1 1.63-.576 2.622 2.622 0 0 1 .576.063 2.704 2.704 0 0 1 1.284.735l4.277 4.193a1.375 1.375 0 0 0 1.87-.094z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-indicator">
+        <div class="scroll-dot"></div>
+      </div>
+      <span>Scroll</span>
+    </div>
+    <div class="hero-3d-object" id="hero-3d"></div>
+  </section>
+
+  <!-- ───────────────── ABOUT / SKILLS ───────────────── -->
+  <section id="about" class="about section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">Who I Am</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm <strong>Tirth Chokshi</strong>, a B.Tech Computer Science (AI/ML) student at <strong>Adani
+              University</strong>,
+            Ahmedabad, India. I'm passionate about building intelligent systems and beautiful web experiences.
+          </p>
+          <p>
+            As a <strong>FullStack Developer & ML Engineer</strong>, I bridge the gap between data-driven intelligence
+            and
+            user-facing interfaces. I believe in simplicity, usability, and engineering solutions that matter.
+          </p>
+          <p>
+            When I'm not coding, you'll find me playing basketball 🏀 (competition winner!), drumming 🥁,
+            reading, or swimming 🏊.
+          </p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-number">5+</span>
+              <span class="stat-label">ML Projects</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">3+</span>
+              <span class="stat-label">Internships</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">3</span>
+              <span class="stat-label">Tech Blogs</span>
+            </div>
+          </div>
+          <div class="about-cta">
+            <a href="TirthChokshi_Resume.pdf" download class="btn btn-primary" ,target="_blank">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              Download Resume
+            </a>
+          </div>
+        </div>
+        <div class="skills-container">
+          <div class="skills-category">
+            <h3 class="skills-cat-title">
+              <span class="cat-icon">🤖</span> Machine Learning & AI
+            </h3>
+            <div class="skills-grid">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">TensorFlow</span>
+              <span class="skill-tag">PyTorch</span>
+              <span class="skill-tag">Scikit-learn</span>
+              <span class="skill-tag">Pandas</span>
+              <span class="skill-tag">NumPy</span>
+              <span class="skill-tag">Matplotlib</span>
+              <span class="skill-tag">Seaborn</span>
+              <span class="skill-tag">OpenCV</span>
+            </div>
+          </div>
+          <div class="skills-category">
+            <h3 class="skills-cat-title">
+              <span class="cat-icon">🌐</span> Web Development
+            </h3>
+            <div class="skills-grid">
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">CSS3</span>
+              <span class="skill-tag">Vue.js</span>
+              <span class="skill-tag">Tailwind CSS</span>
+              <span class="skill-tag">Bootstrap</span>
+            </div>
+          </div>
+          <div class="skills-category">
+            <h3 class="skills-cat-title">
+              <span class="cat-icon">🛠️</span> Tools & Others
+            </h3>
+            <div class="skills-grid">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">Figma</span>
+              <span class="skill-tag">Blender</span>
+              <span class="skill-tag">Three.js</span>
+              <span class="skill-tag">Chart.js</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────── EXPERIENCE ───────────────── -->
+  <section id="experience" class="experience section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Career</span>
+        <h2 class="section-title">Experience & Education</h2>
+      </div>
+      <div class="timeline">
+
+        <!-- Experience items -->
+        <div class="timeline-item exp-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Web Development Lead</h3>
+                <p class="card-company">Adani Student Programming & Development Club (ASPDC)</p>
+              </div>
+              <span class="card-badge">Leadership</span>
+            </div>
+            <p class="card-date">📅 2023 – Present</p>
+            <ul class="card-bullets">
+              <li>Co-organized and led programming events and competitions</li>
+              <li>Mentored junior developers in web technologies and best practices</li>
+              <li>Volunteered in organizing tech workshops and hackathons</li>
+            </ul>
+            <div class="card-tags">
+              <span>React</span><span>JavaScript</span><span>Team Leadership</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item exp-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Machine Learning Intern</h3>
+                <p class="card-company">Cognifyz Technologies</p>
+              </div>
+              <span class="card-badge">Internship</span>
+            </div>
+            <p class="card-date">📅 2024</p>
+            <ul class="card-bullets">
+              <li>Worked on AI-ML concepts and Python programming tasks</li>
+              <li>Built data-driven projects including Restaurant Rating and Cuisine Classification</li>
+              <li>Applied data analysis, feature engineering, and model training pipelines</li>
+            </ul>
+            <div class="card-tags">
+              <span>Python</span><span>ML</span><span>Data Analysis</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item exp-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Student Intern</h3>
+                <p class="card-company">Silver Touch Technologies Ltd</p>
+              </div>
+              <span class="card-badge">Internship</span>
+            </div>
+            <p class="card-date">📅 2024</p>
+            <ul class="card-bullets">
+              <li>Gained hands-on experience in Python, Machine Learning, and Data Science</li>
+              <li>Worked on real-world projects and collaborated with senior engineers</li>
+              <li>Developed and improved data pipelines and ML models</li>
+            </ul>
+            <div class="card-tags">
+              <span>Python</span><span>Data Science</span><span>Machine Learning</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="timeline-item edu-item">
+          <div class="timeline-dot edu-dot"></div>
+          <div class="timeline-card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">B.Tech – Computer Science (AI/ML)</h3>
+                <p class="card-company">Adani University, Ahmedabad</p>
+              </div>
+              <span class="card-badge edu-badge">Education</span>
+            </div>
+            <p class="card-date">📅 2023 – 2027</p>
+            <ul class="card-bullets">
+              <li>Specialization in Artificial Intelligence and Machine Learning</li>
+              <li>Core subjects: Algorithms, Data Structures, AI, ML, Computer Vision</li>
+              <li>Active member of ASPDC – Web Development Lead</li>
+            </ul>
+            <div class="card-tags">
+              <span>AI/ML</span><span>Computer Science</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item edu-item">
+          <div class="timeline-dot edu-dot"></div>
+          <div class="timeline-card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Higher Secondary – Science</h3>
+                <p class="card-company">H B Kapadia High School</p>
+              </div>
+              <span class="card-badge edu-badge">Education</span>
+            </div>
+            <p class="card-date">📅 2021 – 2023</p>
+            <ul class="card-bullets">
+              <li>Science stream with Mathematics and Computer Science</li>
+            </ul>
+            <div class="card-tags">
+              <span>Science</span><span>Mathematics</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Certifications -->
+      <div class="certs-section">
+        <h3 class="certs-title">Certifications</h3>
+        <div class="certs-grid">
+          <div class="cert-card">
+            <div class="cert-icon">🎓</div>
+            <div>
+              <h4>Scientific Computing with Python</h4>
+              <p>FreeCodeCamp</p>
+            </div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-icon">🎓</div>
+            <div>
+              <h4>HTML5, CSS & JavaScript</h4>
+              <p>Udemy</p>
+            </div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-icon">🤖</div>
+            <div>
+              <h4>AI/ML Fundamentals</h4>
+              <p>Puch AI Hackathon Participant</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ───────────────── PROJECTS ───────────────── -->
+  <section id="projects" class="projects section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Portfolio</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">A selection of my work in ML and full-stack development</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1 – Featured -->
+        <div class="project-card featured" data-aos="fade-up">
+          <div class="project-featured-label">⭐ Featured</div>
+          <div class="project-image-container">
+            <div class="project-placeholder airplane-bg">
+              <div class="project-3d-icon">✈️</div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-type">Machine Learning</span>
+            </div>
+            <h3 class="project-title">Airplane Ticket Price Prediction</h3>
+            <p class="project-desc">
+              An AI model that predicts flight ticket prices based on multiple features including airlines,
+              source/destination, departure time, and stops. Uses regression techniques with high accuracy.
+            </p>
+            <div class="project-stack">
+              <span>Python</span><span>Scikit-learn</span><span>Pandas</span><span>Matplotlib</span><span>Flask</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/tirth12345/Airplane-Ticket-Price-Prediction" target="_blank"
+                class="project-link github-link">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                  <path
+                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                </svg>
+                Source Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 – Featured -->
+        <div class="project-card featured" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-featured-label">⭐ Featured</div>
+          <div class="project-image-container">
+            <div class="project-placeholder house-bg">
+              <div class="project-3d-icon">🏠</div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-type">Machine Learning</span>
+            </div>
+            <h3 class="project-title">Housing Price Prediction</h3>
+            <p class="project-desc">
+              An intelligent ML model that predicts house prices based on various criteria such as location,
+              area, number of rooms, and amenities. Employs multiple regression algorithms for best accuracy.
+            </p>
+            <div class="project-stack">
+              <span>Python</span><span>Scikit-learn</span><span>NumPy</span><span>Pandas</span><span>Seaborn</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/tirth12345/House_Price-Prediction" target="_blank"
+                class="project-link github-link">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                  <path
+                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                </svg>
+                Source Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="project-image-container">
+            <div class="project-placeholder solar-bg">
+              <div class="project-3d-icon">🌌</div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-type">3D / Web</span>
+            </div>
+            <h3 class="project-title">Solar System – Three.js</h3>
+            <p class="project-desc">
+              An interactive 3D solar system simulation built with Three.js. Features realistic planet
+              orbits, lighting, and user-controlled camera navigation.
+            </p>
+            <div class="project-stack">
+              <span>Three.js</span><span>JavaScript</span><span>WebGL</span><span>CSS3</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/tirth12345" target="_blank" class="project-link github-link">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                  <path
+                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                </svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-image-container">
+            <div class="project-placeholder packpal-bg">
+              <div class="project-3d-icon">📦</div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-type">Full Stack</span>
+            </div>
+            <h3 class="project-title">PackPal</h3>
+            <p class="project-desc">
+              A full-stack inventory and packing management application. Helps teams coordinate
+              packing operations with real-time tracking and user management.
+            </p>
+            <div class="project-stack">
+              <span>React</span><span>Node.js</span><span>JavaScript</span><span>CSS3</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/tirth12345" target="_blank" class="project-link github-link">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                  <path
+                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                </svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="250">
+          <div class="project-image-container">
+            <div class="project-placeholder cuisine-bg">
+              <div class="project-3d-icon">🍽️</div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-type">Machine Learning</span>
+            </div>
+            <h3 class="project-title">Cuisine Classification</h3>
+            <p class="project-desc">
+              A machine learning classifier that identifies cuisine types from ingredient data.
+              Built during internship at Cognifyz Technologies using classification algorithms.
+            </p>
+            <div class="project-stack">
+              <span>Python</span><span>Scikit-learn</span><span>Pandas</span><span>NLP</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/tirth12345" target="_blank" class="project-link github-link">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                  <path
+                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                </svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-image-container">
+            <div class="project-placeholder uber-bg">
+              <div class="project-3d-icon">🚗</div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-type">Data Science</span>
+            </div>
+            <h3 class="project-title">Uber Booking Status Prediction</h3>
+            <p class="project-desc">
+              A data science project that predicts Uber booking status outcomes using historical
+              ride data. Employs classification models to optimize ride acceptance rates.
+            </p>
+            <div class="project-stack">
+              <span>Python</span><span>Pandas</span><span>Scikit-learn</span><span>Matplotlib</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/tirth12345" target="_blank" class="project-link github-link">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                  <path
+                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                </svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="projects-footer">
+        <a href="https://github.com/tirth12345" target="_blank" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+            <path
+              d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+          </svg>
+          View All Projects on GitHub
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ───────────────── BLOG ───────────────── -->
+  <section id="blog" class="blog section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Writing</span>
+        <h2 class="section-title">Technical Blogs</h2>
+        <p class="section-subtitle">I write about AI/ML, web development, and tech concepts</p>
+      </div>
+      <div class="blog-grid">
+
+        <article class="blog-card">
+          <div class="blog-image-container">
+            <div class="blog-placeholder blog1-bg">
+              <span class="blog-emoji">🤖</span>
+            </div>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">AI / ML</span>
+              <span class="blog-read-time">8 min read</span>
+            </div>
+            <h3 class="blog-title">Unlocking the Potential: Essential Resources for AI/ML Programming in Python</h3>
+            <p class="blog-excerpt">
+              A comprehensive guide to the best libraries, tools, and resources for getting started
+              with AI and ML programming in Python. From NumPy to TensorFlow.
+            </p>
+            <a href="https://tirth12345.github.io/Tirth-Chokshi-Portfolio/1stblog.html" target="_blank"
+              class="blog-read-more">
+              Read Article
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-image-container">
+            <div class="blog-placeholder blog2-bg">
+              <span class="blog-emoji">📊</span>
+            </div>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">Data Science</span>
+              <span class="blog-read-time">10 min read</span>
+            </div>
+            <h3 class="blog-title">Data Visualization for Beginners: A Comprehensive Guide</h3>
+            <p class="blog-excerpt">
+              Learn the fundamentals of data visualization from scratch. Covers Matplotlib, Seaborn,
+              and best practices for presenting data effectively and clearly.
+            </p>
+            <a href="https://tirth12345.github.io/Tirth-Chokshi-Portfolio/3rdblog.html" target="_blank"
+              class="blog-read-more">
+              Read Article
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-image-container">
+            <div class="blog-placeholder blog3-bg">
+              <span class="blog-emoji">🔍</span>
+            </div>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">SEO</span>
+              <span class="blog-read-time">12 min read</span>
+            </div>
+            <h3 class="blog-title">The Ultimate Guide to SEO for Beginners: A Journey to Online Visibility</h3>
+            <p class="blog-excerpt">
+              From keyword research to on-page optimization, this guide covers everything you need to
+              know to improve your website's visibility on search engines.
+            </p>
+            <a href="https://tirth12345.github.io/Tirth-Chokshi-Portfolio/2ndblog.html" target="_blank"
+              class="blog-read-more">
+              Read Article
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────── CONTACT ───────────────── -->
+  <section id="contact" class="contact section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Let's Talk</span>
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Have a project in mind or just want to say hi? My inbox is always open!</p>
+      </div>
+      <div class="contact-grid">
+
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          <div class="contact-items">
+            <a href="mailto:tirthchokshi20@gmail.com" class="contact-item">
+              <div class="contact-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <div>
+                <p class="contact-item-label">Email</p>
+                <p class="contact-item-value">tirthchokshi20@gmail.com</p>
+              </div>
+            </a>
+            <a href="tel:+917228864643" class="contact-item">
+              <div class="contact-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.45 2 2 0 0 1 3.57 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16z" />
+                </svg>
+              </div>
+              <div>
+                <p class="contact-item-label">Phone</p>
+                <p class="contact-item-value">+91 7228864643</p>
+              </div>
+            </a>
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <div>
+                <p class="contact-item-label">Location</p>
+                <p class="contact-item-value">Ahmedabad, Gujarat, India</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-socials">
+            <h4>Follow Me</h4>
+            <div class="social-links">
+              <a href="https://github.com/tirth12345" target="_blank" class="social-btn" id="github-link">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                </svg>
+                GitHub
+              </a>
+              <a href="https://linkedin.com/in/tirth-chokshi-44b355295" target="_blank" class="social-btn linkedin-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+                LinkedIn
+              </a>
+              <a href="https://leetcode.com/tirthchokshi20" target="_blank" class="social-btn leetcode-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                  <path
+                    d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.824l4.319-4.38c.467-.467 1.125-.645 1.837-.645s1.357.195 1.823.662l2.697 2.606c.514.515 1.365.497 1.9-.038.535-.536.553-1.387.038-1.902l-2.609-2.636a5.055 5.055 0 0 0-2.445-1.337l2.467-2.503c.516-.514.498-1.366-.037-1.901-.535-.535-1.387-.552-1.902-.038l-10.1 10.101c-.981.982-1.494 2.337-1.494 3.835 0 1.498.513 2.895 1.494 3.875l4.347 4.361c.981.979 2.337 1.452 3.834 1.452s2.853-.512 3.835-1.494l2.609-2.637c.514-.514.496-1.365-.039-1.9s-1.386-.553-1.899-.039zM20.811 13.01H10.666c-.702 0-1.27.604-1.27 1.346s.568 1.346 1.27 1.346h10.145c.701 0 1.27-.604 1.27-1.346s-.569-1.346-1.27-1.346z" />
+                </svg>
+                LeetCode
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-container">
+          <form class="contact-form" id="contact-form">
+            <div class="form-success" id="form-success">
+              <div class="success-icon">✅</div>
+              <h3>Message Sent!</h3>
+              <p>Thank you! I'll get back to you very soon.</p>
+            </div>
+            <div class="form-fields" id="form-fields">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name *</label>
+                  <input type="text" id="name" name="name" placeholder="John Doe" required />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" placeholder="john@example.com" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject *</label>
+                <input type="text" id="subject" name="subject" placeholder="Project Collaboration" required />
+              </div>
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" rows="6"
+                  placeholder="Tell me about your project or just say hi..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary submit-btn" id="submit-btn">
+                <span class="btn-text">Send Message</span>
+                <span class="btn-loading" style="display:none">
+                  <svg class="spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 6v6l4 2" />
+                  </svg>
+                  Sending...
+                </span>
+                <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13" />
+                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────── FOOTER ───────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-bracket">&lt;</span>TC<span class="logo-bracket">/&gt;</span>
+        </div>
+        <p class="footer-text">Designed & Built by <strong>Tirth Chokshi</strong> · 2025</p>
+        <div class="footer-links">
+          <a href="https://github.com/tirth12345" target="_blank">GitHub</a>
+          <a href="https://linkedin.com/in/tirth-chokshi-44b355295" target="_blank">LinkedIn</a>
+          <a href="mailto:tirthchokshi20@gmail.com">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
