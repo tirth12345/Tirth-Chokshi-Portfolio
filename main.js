@@ -273,14 +273,24 @@
 
   // Stat counters
   document.querySelectorAll('.stat-number').forEach(el => {
-    const target = parseInt(el.textContent);
+    const targetText = el.textContent;
+    const target = parseInt(targetText);
     if (isNaN(target)) return;
-    const suffix = el.textContent.replace(/[0-9]/g, '');
-    gsap.from({ val: 0 }, {
+    const suffix = targetText.replace(/[0-9]/g, '');
+    const obj = { val: 0 };
+
+    gsap.to(obj, {
       scrollTrigger: { trigger: el, start: 'top 90%', once: true },
-      val: target, duration: 1.8, ease: 'power2.out',
-      onUpdate: function() { el.textContent = Math.round(this.targets()[0].val) + suffix; }
+      val: target,
+      duration: 2,
+      ease: 'power2.out',
+      onUpdate: () => {
+        el.textContent = Math.round(obj.val) + suffix;
+      }
     });
+
+    // Explicitly set to 0 initially
+    el.textContent = '0' + suffix;
   });
 })();
 

@@ -247,7 +247,7 @@ body {
 }
 .about-text strong { color: var(--text); }
 .about-stats {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 36px 0;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 36px 0;
 }
 .stat-item {
   text-align: center; padding: 24px 16px; border-radius: var(--radius);
@@ -575,7 +575,7 @@ body {
   .nav-hamburger { display: flex; z-index: 1001; position: relative; }
   .hero-content { padding-left: 24px; }
   .hero-cta { flex-direction: column; }
-  .about-stats { grid-template-columns: 1fr 1fr 1fr; }
+  .about-stats { grid-template-columns: 1fr 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .blog-grid { grid-template-columns: 1fr; }
   .certs-grid { grid-template-columns: 1fr; }
