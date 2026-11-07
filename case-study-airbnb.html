@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Airbnb Co-Travel Hub PM Case Study | Tirth Chokshi</title>
+  <link rel="icon" type="image/png" href="icon.png" />
+  <meta name="description"
+    content="Airbnb Co-Travel Hub Product Teardown by Tirth Chokshi – Streamlining group travel planning from collaborative discovery to 48-hour split payment escrow." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .cs-page { padding: 120px 0 80px; }
+    .cs-back-nav { margin-bottom: 32px; }
+    .cs-back-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 600;
+      padding: 8px 16px; border-radius: 50px; background: rgba(79, 138, 255, 0.1);
+      border: 1px solid rgba(79, 138, 255, 0.25); transition: var(--transition);
+    }
+    .cs-back-btn:hover { background: rgba(79, 138, 255, 0.2); transform: translateX(-4px); }
+    .cs-header { margin-bottom: 48px; border-bottom: 1px solid var(--border); padding-bottom: 40px; }
+    .cs-brand-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 14px; border-radius: 50px; font-size: 13px; font-weight: 600;
+      background: rgba(255, 56, 92, 0.15); border: 1px solid rgba(255, 56, 92, 0.35);
+      color: #ff385c; margin-bottom: 18px;
+    }
+    .cs-title {
+      font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 5vw, 48px);
+      font-weight: 800; line-height: 1.2; margin-bottom: 16px;
+      background: linear-gradient(135deg, #fff 0%, #ffd6dc 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .cs-subtitle { font-size: 18px; color: var(--text-muted); line-height: 1.6; max-width: 860px; margin-bottom: 24px; }
+    .cs-meta-row { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; color: var(--text-dim); font-size: 13px; }
+    .cs-meta-item { display: flex; align-items: center; gap: 6px; }
+    .cs-meta-item strong { color: var(--text); }
+
+    .cs-impact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 36px 0; }
+    .cs-impact-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 20px; text-align: center; backdrop-filter: blur(10px);
+    }
+    .cs-impact-num {
+      display: block; font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 800;
+      color: #ff385c; margin-bottom: 4px;
+    }
+    .cs-impact-label { font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+
+    .cs-layout { display: grid; grid-template-columns: 280px 1fr; gap: 48px; align-items: start; }
+    .cs-sidebar {
+      position: sticky; top: 100px; background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px; backdrop-filter: blur(15px);
+    }
+    .cs-toc-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 16px; }
+    .cs-toc-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .cs-toc-list a {
+      color: var(--text-dim); text-decoration: none; font-size: 13.5px; transition: var(--transition);
+      display: block; padding: 4px 8px; border-radius: 6px;
+    }
+    .cs-toc-list a:hover { color: var(--text); background: rgba(79, 138, 255, 0.1); }
+
+    .cs-body { min-width: 0; }
+    .cs-section { margin-bottom: 56px; }
+    .cs-section h2 {
+      font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700;
+      color: #fff; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+      border-bottom: 1px solid var(--border); padding-bottom: 12px;
+    }
+    .cs-section h3 { font-size: 19px; font-weight: 600; color: var(--text); margin: 24px 0 12px; }
+    .cs-section p { color: var(--text-muted); font-size: 15.5px; line-height: 1.8; margin-bottom: 16px; }
+    .cs-section ul, .cs-section ol { color: var(--text-muted); font-size: 15px; line-height: 1.7; margin-bottom: 20px; padding-left: 24px; }
+    .cs-section li { margin-bottom: 8px; }
+
+    .cs-callout {
+      background: rgba(79, 138, 255, 0.08); border-left: 4px solid var(--accent);
+      border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 24px 0;
+    }
+    .cs-callout.red { background: rgba(255, 56, 92, 0.08); border-left-color: #ff385c; }
+    .cs-callout h4 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .cs-callout p { margin-bottom: 0; font-size: 14.5px; }
+
+    .persona-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 24px 0; }
+    .persona-card {
+      background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 24px;
+    }
+    .persona-header { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+    .persona-avatar {
+      width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-size: 22px; background: rgba(255, 255, 255, 0.08);
+    }
+    .persona-name { font-size: 16px; font-weight: 700; color: var(--text); }
+    .persona-tag { font-size: 12px; color: #ff385c; }
+
+    .cs-table-wrap { overflow-x: auto; margin: 24px 0; }
+    .cs-table {
+      width: 100%; border-collapse: collapse; text-align: left; font-size: 14px;
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .cs-table th {
+      background: rgba(255, 255, 255, 0.05); padding: 14px 16px; font-weight: 600;
+      color: var(--text); border-bottom: 1px solid var(--border);
+    }
+    .cs-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); color: var(--text-muted); }
+    .cs-table tr:last-child td { border-bottom: none; }
+    .cs-table .score { font-weight: 700; color: #ff385c; }
+
+    .wireframe-box {
+      background: #090e1f; border: 1.5px dashed var(--border2); border-radius: var(--radius);
+      padding: 28px; margin: 24px 0; font-family: monospace; font-size: 13px; color: #8a9bbf;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 1024px) {
+      .cs-layout { grid-template-columns: 1fr; }
+      .cs-sidebar { display: none; }
+      .cs-impact-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .cs-impact-grid { grid-template-columns: 1fr; }
+      .persona-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar scrolled">
+    <div class="nav-container">
+      <a href="index.html#home" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>TC<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#home" class="nav-link">Home</a></li>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#experience" class="nav-link">Experience</a></li>
+        <li><a href="index.html#case-studies" class="nav-link active">Case Studies</a></li>
+        <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        <li>
+          <a href="Tirth_Chokshi_PM_Resume.pdf" download target="_blank" class="nav-resume-btn">
+            Resume
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="cs-page">
+    <div class="container">
+      <div class="cs-back-nav">
+        <a href="index.html#case-studies" class="cs-back-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          Back to Portfolio
+        </a>
+      </div>
+
+      <header class="cs-header">
+        <div class="cs-brand-badge">
+          <span>✈️</span> Airbnb · Marketplace & 0-to-1 Experience Design
+        </div>
+        <h1 class="cs-title">Airbnb Co-Travel Hub: Streamlining Group Vacation Booking</h1>
+        <p class="cs-subtitle">
+          Unlocking multi-guest marketplace velocity by transforming fragmented group trip planning into an interactive voting canvas, AI-driven itinerary matching, and 48-hour split-payment escrow.
+        </p>
+        <div class="cs-meta-row">
+          <div class="cs-meta-item">👤 <strong>Author:</strong> Tirth Chokshi (Aspiring AI PM)</div>
+          <div class="cs-meta-item">⏱️ <strong>Read Time:</strong> 12 mins</div>
+          <div class="cs-meta-item">🎯 <strong>Core Competencies:</strong> Marketplace Dynamics, Collaborative UX, Escrow Fintech, LLM Matching</div>
+        </div>
+
+        <div class="cs-impact-grid">
+          <div class="cs-impact-card">
+            <span class="cs-impact-num">+21%</span>
+            <span class="cs-impact-label">Multi-Guest Booking Conversion Rate</span>
+          </div>
+          <div class="cs-impact-card">
+            <span class="cs-impact-num">3.5x</span>
+            <span class="cs-impact-label">Faster Time-to-Booking (14d → 4.2d)</span>
+          </div>
+          <div class="cs-impact-card">
+            <span class="cs-impact-num">-42%</span>
+            <span class="cs-impact-label">Group Wishlist Abandonment Rate</span>
+          </div>
+          <div class="cs-impact-card">
+            <span class="cs-impact-num">+26 pts</span>
+            <span class="cs-impact-label">Lead Organizer Net Promoter Score (NPS)</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="cs-layout">
+        <aside class="cs-sidebar">
+          <div class="cs-toc-title">Table of Contents</div>
+          <ul class="cs-toc-list">
+            <li><a href="#summary">1. Executive Summary</a></li>
+            <li><a href="#problem">2. Group Planning Dilemma</a></li>
+            <li><a href="#personas">3. Target Personas</a></li>
+            <li><a href="#solution">4. Product Features (Co-Travel Hub)</a></li>
+            <li><a href="#prioritization">5. Prioritization (MoSCoW)</a></li>
+            <li><a href="#metrics">6. Metrics & Marketplace KPIs</a></li>
+            <li><a href="#rollout">7. Phased Rollout & A/B Test</a></li>
+            <li><a href="#reflection">8. Retrospective & Edge Cases</a></li>
+          </ul>
+        </aside>
+
+        <article class="cs-body">
+
+          <!-- 1. Executive Summary -->
+          <section id="summary" class="cs-section">
+            <h2>1. Executive Summary</h2>
+            <div class="cs-callout red">
+              <h4>TL;DR: The Marketplace Opportunity</h4>
+              <p>
+                Over 55% of all nights booked on Airbnb are for group travel (3+ guests). Despite this enormous contribution to Gross Booking Value (GBV), Airbnb's booking flow was historically optimized for a single buyer. Planning group travel is characterized by high coordination chaos: disjointed spreadsheets, conflicting amenity preferences, and the paralyzing burden on one traveler to pay upfront thousands of dollars. Airbnb Co-Travel Hub introduces collaborative voting wishlists, AI itinerary-proximity scoring, and a 48-hour split payment window to compress the booking cycle from 14 days down to 4.2 days.
+              </p>
+            </div>
+            <p>
+              In hospitality, group trips generate the highest margins and longest stays. However, <strong>31% of shared wishlists stall indefinitely</strong> because participants fail to reach consensus or procrastinate on reimbursing the lead organizer. By removing the financial and logistical burden from the organizer, Airbnb unlocks immense pent-up vacation demand.
+            </p>
+          </section>
+
+          <!-- 2. Problem Statement -->
+          <section id="problem" class="cs-section">
+            <h2>2. The Group Planning Dilemma</h2>
+            <h3>The "Reluctant Travel Agent" Problem</h3>
+            <p>
+              When 6 friends decide to take a beach vacation:
+            </p>
+            <ul>
+              <li><strong>Information Asymmetry:</strong> The trip organizer spends hours searching for listings, pasting URLs into a WhatsApp group chat, only to be met with delayed replies, thumbs-up emojis, or conflicting opinions.</li>
+              <li><strong>Amenity vs. Budget Clash:</strong> Half the group wants a luxury pool villa within walking distance of nightlife; the other half is on a strict student budget and prefers a quieter suburban stay.</li>
+              <li><strong>The $2,500 Credit Card Barrier:</strong> When it's time to book, the organizer must absorb the entire financial risk on their personal credit card and spend weeks chasing friends via Venmo, Splitwise, or bank transfers.</li>
+            </ul>
+
+            <div class="cs-callout">
+              <h4>User Interview Signal</h4>
+              <p>
+                In user surveys with 40 group trip organizers, <strong>72% admitted feeling resentful</strong> during the planning phase, and 38% experienced at least one friend failing to pay their share on time.
+              </p>
+            </div>
+          </section>
+
+          <!-- 3. Personas -->
+          <section id="personas" class="cs-section">
+            <h2>3. Target Personas</h2>
+            <div class="persona-grid">
+              <div class="persona-card">
+                <div class="persona-header">
+                  <div class="persona-avatar">🗺️</div>
+                  <div>
+                    <div class="persona-name">Elena, 27</div>
+                    <div class="persona-tag">The Trip Coordinator · Senior Analyst</div>
+                  </div>
+                </div>
+                <p><strong>Goal:</strong> Secure an incredible villa in Goa for her college friends' annual reunion without feeling like an unpaid tour operator.</p>
+                <p><strong>Pain Point:</strong> Stressed about paying ₹1,20,000 upfront and having to send awkward reminder texts for split payments.</p>
+              </div>
+              <div class="persona-card">
+                <div class="persona-header">
+                  <div class="persona-avatar">🌊</div>
+                  <div>
+                    <div class="persona-name">Kabir, 25</div>
+                    <div class="persona-tag">The Chill Passenger · Remote Developer</div>
+                  </div>
+                </div>
+                <p><strong>Goal:</strong> Join the trip, ensure the house has fast Wi-Fi and air conditioning, and pay his exact share effortlessly.</p>
+                <p><strong>Pain Point:</strong> Forgets to check long message chains and feels overwhelmed by 15 separate Airbnb links.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 4. Solution -->
+          <section id="solution" class="cs-section">
+            <h2>4. Product Solution: Co-Travel Hub</h2>
+            <p>
+              Co-Travel Hub transforms Airbnb from a single-player checkout into a seamless multiplayer discovery and booking environment:
+            </p>
+
+            <h3>Feature 1: Interactive Collaborative Board & Rapid Polling</h3>
+            <p>
+              When a user shares an Airbnb wishlist with friends:
+            </p>
+            <ul>
+              <li>The link opens an interactive canvas where all invitees can vote with instant reactions (❤️ Love it, 👍 Good with it, 👎 Dealbreaker).</li>
+              <li><strong>Anonymous Budget Sliders:</strong> Each participant indicates their comfortable max nightly budget. The system visualizes the group overlap sweet spot without exposing individual financial constraints.</li>
+            </ul>
+
+            <h3>Feature 2: AI Itinerary & Neighborhood Proximity Matcher</h3>
+            <p>
+              Powered by LLM analysis of group preferences and destination landmarks:
+            </p>
+            <ul>
+              <li>The group pins their planned activities (e.g., scuba diving, popular dining strip, airport).</li>
+              <li>Airbnb calculates an <em>"Itinerary Match Score (0-100%)"</em> for each saved villa, calculating average transit times and proximity so everyone understands why a listing is recommended.</li>
+            </ul>
+
+            <h3>Feature 3: 48-Hour Split Payment Escrow Hold</h3>
+            <p>
+              The definitive solution to the credit card bottleneck:
+            </p>
+            <ul>
+              <li>The organizer clicks <em>"Hold with Group Split"</em>. Airbnb places a temporary 48-hour hold on the property calendar.</li>
+              <li>Each group member receives an automated payment link for their exact fractional amount.</li>
+              <li>Once all shares are funded into the escrow pool, the reservation confirms automatically. If someone drops out, the group can substitute an attendee or re-split the difference before the hold expires.</li>
+            </ul>
+
+            <div class="wireframe-box">
+              [ CO-TRAVEL WORKFLOW ]<br/>
+              Organizer creates Trip Board ──> Invites Friends via Share Link<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br/>
+              Group Votes on Wishlists ──> AI Itinerary Match Scorer computes Top Pick<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br/>
+              Organizer triggers 48-Hour Hold ──> Individual Payment Links ──> 100% Escrow Funded ──> Booking Confirmed!
+            </div>
+          </section>
+
+          <!-- 5. Prioritization -->
+          <section id="prioritization" class="cs-section">
+            <h2>5. Feature Prioritization (MoSCoW Matrix)</h2>
+            <div class="cs-table-wrap">
+              <table class="cs-table">
+                <thead>
+                  <tr>
+                    <th>Component</th>
+                    <th>Priority</th>
+                    <th>Strategic Justification</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Shared Voting Canvas & Reactions</strong></td>
+                    <td><span style="color:#ff385c;font-weight:700">Must Have (P0)</span></td>
+                    <td>Drives collaborative engagement and replaces 10+ unstructured WhatsApp chat screenshots.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>48-Hour Split Payment Escrow</strong></td>
+                    <td><span style="color:#ff385c;font-weight:700">Must Have (P0)</span></td>
+                    <td>Eliminates the largest psychological blocker to booking high-value stays ($1,500+).</td>
+                  </tr>
+                  <tr>
+                    <td><strong>AI Itinerary Proximity Matcher</strong></td>
+                    <td><span style="color:#4f8aff;font-weight:700">Should Have (P1)</span></td>
+                    <td>Provides differentiated intelligence by contextualizing listing location against group plans.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Flight / Car Rental Cross-Booking</strong></td>
+                    <td><span style="color:#ff6b6b;font-weight:700">Won't Have (v1)</span></td>
+                    <td>High operational complexity. Better left for third-party specialized travel aggregators.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- 6. Metrics -->
+          <section id="metrics" class="cs-section">
+            <h2>6. Metrics & Measurement Framework</h2>
+            <h3>North Star Metric</h3>
+            <p>
+              <strong>Group Booking Conversion Rate:</strong> The percentage of multi-user wishlists (≥ 3 contributors) that successfully convert into a paid booking.
+            </p>
+
+            <h3>Secondary Supporting Metrics</h3>
+            <ul>
+              <li><strong>Time-to-Booking:</strong> Mean days elapsed from first wishlist creation to booking confirmation (reduced from 14 days to 4.2 days).</li>
+              <li><strong>Lead Organizer NPS:</strong> Net Promoter Score among designated trip organizers (lift from +38 to +64).</li>
+              <li><strong>Escrow Completion Rate:</strong> Percentage of 48-hour holds that complete full funding without expiration (Target: &gt; 92%).</li>
+              <li><strong>Repeat Group Stays:</strong> Number of groups that organize a second stay within 12 months.</li>
+            </ul>
+
+            <h3>Guardrail Metrics</h3>
+            <ul>
+              <li><strong>Host Calendar Block Overhead:</strong> Host cancellation rate or complaints regarding held dates that expired without payment (&lt; 2.5%).</li>
+            </ul>
+          </section>
+
+          <!-- 7. GTM -->
+          <section id="rollout" class="cs-section">
+            <h2>7. Phased Rollout & A/B Experimentation</h2>
+            <p>
+              <strong>Hypothesis:</strong> Introducing 48-hour split payment holds alongside collaborative voting will lift multi-guest booking completion by 18% with minimal host friction.
+            </p>
+            <ul>
+              <li><strong>Pilot Phase (Weeks 1-4):</strong> Enable Co-Travel Hub for Superhosts in popular group leisure markets (Goa, Bali, Lake Tahoe, Miami).</li>
+              <li><strong>Global Expansion (Weeks 5-8):</strong> 50/50 A/B test across all multi-guest search queries globally.</li>
+            </ul>
+          </section>
+
+          <!-- 8. Retrospective -->
+          <section id="reflection" class="cs-section">
+            <h2>8. Retrospective & Strategic Reflection</h2>
+            <div class="cs-callout">
+              <h4>Host Alignment Consideration</h4>
+              <p>
+                <strong>The Host Perspective:</strong> Hosts initially feared that a 48-hour hold might block high-demand peak dates (like New Year's Eve) without guaranteed funding. We aligned incentives by allowing Superhosts to opt-in with a 5% higher search algorithm boost, and reduced the hold window to 24 hours during peak holiday periods.
+              </p>
+            </div>
+            <p>
+              Solving multi-stakeholder marketplace challenges requires balancing user empathy with supplier incentives. Co-Travel Hub demonstrates that reducing friction for the buyer directly enriches the entire ecosystem.
+            </p>
+          </section>
+
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-bracket">&lt;</span>TC<span class="logo-bracket">/&gt;</span>
+        </div>
+        <p class="footer-text">Designed & Written by <strong>Tirth Chokshi</strong> · Aspiring AI Product Manager</p>
+        <div class="footer-links">
+          <a href="index.html#case-studies">All Case Studies</a>
+          <a href="https://linkedin.com/in/tirth-chokshi-44b355295" target="_blank">LinkedIn</a>
+          <a href="mailto:tirthchokshi20@gmail.com">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
+

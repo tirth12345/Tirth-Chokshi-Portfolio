@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tirth Chokshi | FullStack Developer & ML Engineer</title>
+  <title>Tirth Chokshi | Aspiring AI Product Manager</title>
   <link rel="icon" type="image/png" href="icon.png" />
   <meta name="description"
-    content="Tirth Chokshi – FullStack Developer and Machine Learning Engineer based in Ahmedabad, India. Specialized in React, Node.js, Python, TensorFlow, and more." />
+    content="Tirth Chokshi – Aspiring AI Product Manager with a background in Computer Science (AI/ML). Bridging Product, Data, and Technology to build high-impact digital products." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 
@@ -24,6 +24,54 @@
 
 <body>
 
+  <!-- ───────────────── PM SPRINT LAUNCH PRELOADER ───────────────── -->
+  <div id="pm-preloader" class="pm-preloader">
+    <div class="pm-loader-content">
+      <div class="pm-loader-logo">
+        <span class="logo-bracket">&lt;</span>TC<span class="logo-bracket">/&gt;</span>
+        <span class="pm-loader-badge">PM Engine</span>
+      </div>
+
+      <!-- Milestone Pipeline -->
+      <div class="pm-pipeline">
+        <div class="pipeline-step active" data-step="1">
+          <div class="step-dot"><span>01</span></div>
+          <span class="step-label">Discovery</span>
+        </div>
+        <div class="pipeline-line"></div>
+        <div class="pipeline-step" data-step="2">
+          <div class="step-dot"><span>02</span></div>
+          <span class="step-label">Strategy</span>
+        </div>
+        <div class="pipeline-line"></div>
+        <div class="pipeline-step" data-step="3">
+          <div class="step-dot"><span>03</span></div>
+          <span class="step-label">Execution</span>
+        </div>
+        <div class="pipeline-line"></div>
+        <div class="pipeline-step" data-step="4">
+          <div class="step-dot"><span>04</span></div>
+          <span class="step-label">Launch</span>
+        </div>
+      </div>
+
+      <!-- Status Text & Percentage -->
+      <div class="pm-status-row">
+        <span id="pm-status-text" class="pm-status-text">
+          <span class="pm-status-spinner"></span> Discovering user friction & research cohorts...
+        </span>
+        <span id="pm-progress-percent" class="pm-progress-percent">0%</span>
+      </div>
+
+      <!-- Progress Track -->
+      <div class="pm-progress-track">
+        <div id="pm-progress-bar" class="pm-progress-bar"></div>
+      </div>
+
+      <div class="pm-loader-hint">Shipping 0-to-1 Product Experience · Tap anywhere to skip</div>
+    </div>
+  </div>
+
   <!-- ───────────────── NAVIGATION ───────────────── -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
@@ -34,11 +82,11 @@
         <li><a href="#home" class="nav-link">Home</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#case-studies" class="nav-link">Case Studies</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#blog" class="nav-link">Blog</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
         <li>
-          <a href="TirthChokshi_Resume.pdf" download class="nav-resume-btn" ,target='_blank'>
+          <a href="Tirth_Chokshi_PM_Resume.pdf" download target="_blank" class="nav-resume-btn">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
               <polyline points="7 10 12 15 17 10" />
@@ -60,40 +108,48 @@
     <div class="hero-content">
       <div class="hero-badge">
         <span class="badge-dot"></span>
-        Available for opportunities
+        Available for APM & Product Roles
       </div>
       <h1 class="hero-title">
         <span class="hero-greeting">Hi, I'm</span>
         <span class="hero-name">Tirth Chokshi</span>
       </h1>
       <div class="hero-roles">
-        <span class="role-text" id="role-text">FullStack Developer</span>
+        <span class="role-text" id="role-text">Aspiring AI Product Manager</span>
       </div>
       <p class="hero-desc">
-        Dedicated developer & ML engineer building intelligent web experiences.
-        I craft scalable full-stack applications and train ML models that solve real-world problems.
+        CSE (AI/ML) student bridging <strong>user empathy</strong>, <strong>data analytics</strong>, and <strong>engineering rigor</strong>.
+        Obsessed with solving high-impact problems, building scalable digital products, and leveraging AI to drive measurable business outcomes.
       </p>
       <div class="hero-cta">
-        <a href="#projects" class="btn btn-primary">
-          View My Work
+        <a href="#case-studies" class="btn btn-primary">
+          Explore Case Studies
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="5" y1="12" x2="19" y2="12" />
             <polyline points="12 5 19 12 12 19" />
           </svg>
         </a>
-        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+        <a href="#projects" class="btn btn-outline">View Flagship Projects</a>
+        <a href="Tirth_Chokshi_PM_Resume.pdf" download target="_blank" class="btn btn-outline">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+          PM Resume
+        </a>
       </div>
       <div class="hero-socials">
-        <a href="https://github.com/tirth12345" target="_blank" class="social-icon" title="GitHub">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
-          </svg>
-        </a>
         <a href="https://linkedin.com/in/tirth-chokshi-44b355295" target="_blank" class="social-icon" title="LinkedIn">
           <svg viewBox="0 0 24 24" fill="currentColor">
             <path
               d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+        </a>
+        <a href="https://github.com/tirth12345" target="_blank" class="social-icon" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
           </svg>
         </a>
         <a href="mailto:tirthchokshi20@gmail.com" class="social-icon" title="Email">
@@ -102,12 +158,10 @@
             <polyline points="22,6 12,13 2,6" />
           </svg>
         </a>
-        <a href="https://leetcode.com/tirthchokshi20" target="_blank" class="social-icon" title="LeetCode">
+        <a href="https://leetcode.com/tirthchokshi20" target="_blank" class="social-icon" title="LeetCode Profile">
           <svg viewBox="0 0 24 24" fill="currentColor">
             <path
               d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.097c.91-.912 2.378-.912 3.289 0l.023.024c.38.378.475.577.849.577.spaces 0 .695-.236.936-.477l.055-.053a1.376 1.376 0 0 0-.005-1.948 5.232 5.232 0 0 0-7.318-.038z" />
-            <path
-              d="M20.245 9.338a1.375 1.375 0 0 0-.004-1.952l-4.277-4.193a5.929 5.929 0 0 0-1.33-.993 5.55 5.55 0 0 0-1.197-.403 5.398 5.398 0 0 0-1.164-.12 5.34 5.34 0 0 0-2.35.551 5.517 5.517 0 0 0-.986.605 1.375 1.375 0 0 0 1.671 2.184 2.713 2.713 0 0 1 1.63-.576 2.622 2.622 0 0 1 .576.063 2.704 2.704 0 0 1 1.284.735l4.277 4.193a1.375 1.375 0 0 0 1.87-.094z" />
           </svg>
         </a>
       </div>
@@ -118,7 +172,6 @@
       </div>
       <span>Scroll</span>
     </div>
-    <div class="hero-3d-object" id="hero-3d"></div>
   </section>
 
   <!-- ───────────────── ABOUT / SKILLS ───────────────── -->
@@ -126,98 +179,119 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">About Me</span>
-        <h2 class="section-title">Who I Am</h2>
+        <h2 class="section-title">Product × Data × Technology</h2>
+        <p class="section-subtitle">Bridging technical complexity and customer value to build intuitive products</p>
       </div>
       <div class="about-grid">
         <div class="about-text">
           <p>
-            I'm <strong>Tirth Chokshi</strong>, a B.Tech Computer Science (AI/ML) student at <strong>Adani
-              University</strong>,
-            Ahmedabad, India. I'm passionate about building intelligent systems and beautiful web experiences.
+            I'm <strong>Tirth Chokshi</strong>, an Aspiring AI Product Manager pursuing my B.Tech in Computer Science
+            Engineering (AI/ML) at <strong>Adani University FEST</strong>, Ahmedabad, India (Graduating June 2027).
           </p>
           <p>
-            As a <strong>FullStack Developer & ML Engineer</strong>, I bridge the gap between data-driven intelligence
-            and
-            user-facing interfaces. I believe in simplicity, usability, and engineering solutions that matter.
+            My sweet spot lies at the crossroads of <strong>deep technical literacy</strong> and <strong>sharp product sense</strong>. Having built machine learning models, full-stack web platforms, and data pipelines, I understand both the capabilities and the operational constraints of engineering teams. I translate fuzzy user pain points into crisp PRDs, data-informed prioritization matrices, and measurable business outcomes.
           </p>
           <p>
-            When I'm not coding, you'll find me playing basketball 🏀 (competition winner!), drumming 🥁,
-            reading, or swimming 🏊.
+            As the <strong>Web Development Lead at ASPDC</strong>, I direct a team of 4-5 developers, running agile sprints, prioritizing feature backlogs with domain leads, and ensuring timely delivery of student-facing web platforms. My internships at <strong>Silver Touch Technologies</strong> and <strong>Cognifyz Technologies</strong> solidified my expertise in metrics definition, predictive data workflows, and user-centric problem solving.
+          </p>
+          <p>
+            Outside of product teardowns and sprint planning, I'm a competitive basketball player 🏀 (tournament winner!), drummer 🥁, avid reader, and swimmer 🏊.
           </p>
           <div class="about-stats">
             <div class="stat-item">
-              <span class="stat-number">5+</span>
-              <span class="stat-label">ML Projects</span>
+              <span class="stat-number">3</span>
+              <span class="stat-label">PM Case Studies</span>
             </div>
             <div class="stat-item">
               <span class="stat-number">3+</span>
-              <span class="stat-label">Software Projects</span>
+              <span class="stat-label">Product Builds</span>
             </div>
             <div class="stat-item">
-              <span class="stat-number">2+</span>
+              <span class="stat-number">2</span>
               <span class="stat-label">Internships</span>
             </div>
             <div class="stat-item">
-              <span class="stat-number">4+</span>
-              <span class="stat-label">Tech Blogs</span>
+              <span class="stat-number">5</span>
+              <span class="stat-label">Engineers Led</span>
             </div>
           </div>
           <div class="about-cta">
-            <a href="TirthChokshi_Resume.pdf" download class="btn btn-primary" ,target="_blank">
+            <a href="Tirth_Chokshi_PM_Resume.pdf" download target="_blank" class="btn btn-primary">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                 <polyline points="7 10 12 15 17 10" />
                 <line x1="12" y1="15" x2="12" y2="3" />
               </svg>
-              Download Resume
+              Download PM Resume (PDF)
             </a>
           </div>
         </div>
         <div class="skills-container">
+          <!-- 1. Product Management -->
           <div class="skills-category">
             <h3 class="skills-cat-title">
-              <span class="cat-icon">🤖</span> Machine Learning & AI
+              <span class="cat-icon">🎯</span> Product Management & Strategy
+            </h3>
+            <div class="skills-grid">
+              <span class="skill-tag">Product Management</span>
+              <span class="skill-tag">Product Development</span>
+              <span class="skill-tag">Product Analytics</span>
+              <span class="skill-tag">User Research</span>
+              <span class="skill-tag">Agile / Scrum</span>
+              <span class="skill-tag">PRD Writing</span>
+              <span class="skill-tag">Wireframing</span>
+              <span class="skill-tag">RICE Prioritization</span>
+              <span class="skill-tag">MoSCoW Scoping</span>
+              <span class="skill-tag">A/B Testing</span>
+              <span class="skill-tag">User Journey Mapping</span>
+            </div>
+          </div>
+          <!-- 2. Data & AI -->
+          <div class="skills-category">
+            <h3 class="skills-cat-title">
+              <span class="cat-icon">📊</span> Data & AI for Product
             </h3>
             <div class="skills-grid">
               <span class="skill-tag">Python</span>
-              <span class="skill-tag">TensorFlow</span>
-              <span class="skill-tag">PyTorch</span>
-              <span class="skill-tag">Scikit-learn</span>
-              <span class="skill-tag">Pandas</span>
-              <span class="skill-tag">NumPy</span>
-              <span class="skill-tag">Matplotlib</span>
-              <span class="skill-tag">Seaborn</span>
-              <span class="skill-tag">OpenCV</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">Data Analysis</span>
+              <span class="skill-tag">Machine Learning</span>
+              <span class="skill-tag">Artificial Intelligence</span>
+              <span class="skill-tag">Microsoft Power BI</span>
+              <span class="skill-tag">DAX Modeling</span>
+              <span class="skill-tag">KPI Definition</span>
+              <span class="skill-tag">Funnel Analysis</span>
+              <span class="skill-tag">Predictive Modeling</span>
             </div>
           </div>
+          <!-- 3. Technical Acumen -->
           <div class="skills-category">
             <h3 class="skills-cat-title">
-              <span class="cat-icon">🌐</span> Web Development
+              <span class="cat-icon">💻</span> Technical & Engineering Acumen
             </h3>
             <div class="skills-grid">
               <span class="skill-tag">React</span>
               <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">MongoDB</span>
               <span class="skill-tag">TypeScript</span>
-              <span class="skill-tag">JavaScript</span>
-              <span class="skill-tag">HTML5</span>
-              <span class="skill-tag">CSS3</span>
-              <span class="skill-tag">Vue.js</span>
-              <span class="skill-tag">Tailwind CSS</span>
-              <span class="skill-tag">Bootstrap</span>
+              <span class="skill-tag">Git / GitHub</span>
+              <span class="skill-tag">REST APIs</span>
+              <span class="skill-tag">System Architecture</span>
+              <span class="skill-tag">Data Structures</span>
             </div>
           </div>
+          <!-- 4. Leadership -->
           <div class="skills-category">
             <h3 class="skills-cat-title">
-              <span class="cat-icon">🛠️</span> Tools & Others
+              <span class="cat-icon">🤝</span> Leadership & Execution
             </h3>
             <div class="skills-grid">
-              <span class="skill-tag">Git</span>
-              <span class="skill-tag">MySQL</span>
-              <span class="skill-tag">PostgreSQL</span>
-              <span class="skill-tag">Figma</span>
-              <span class="skill-tag">Blender</span>
-              <span class="skill-tag">Three.js</span>
-              <span class="skill-tag">Chart.js</span>
+              <span class="skill-tag">Cross-Functional Leadership</span>
+              <span class="skill-tag">Problem Solving</span>
+              <span class="skill-tag">Stakeholder Communication</span>
+              <span class="skill-tag">Team Collaboration</span>
+              <span class="skill-tag">Sprint Planning</span>
+              <span class="skill-tag">User Empathy</span>
             </div>
           </div>
         </div>
@@ -229,12 +303,13 @@
   <section id="experience" class="experience section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Career</span>
+        <span class="section-tag">Career & Leadership</span>
         <h2 class="section-title">Experience & Education</h2>
+        <p class="section-subtitle">Track record in leadership, data-driven engineering, and cross-functional execution</p>
       </div>
       <div class="timeline">
 
-        <!-- Experience items -->
+        <!-- Experience 1: ASPDC -->
         <div class="timeline-item exp-item">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
@@ -245,40 +320,19 @@
               </div>
               <span class="card-badge">Leadership</span>
             </div>
-            <p class="card-date">📅 2023 – Present</p>
+            <p class="card-date">📅 Aug 2024 – Present · Ahmedabad, India</p>
             <ul class="card-bullets">
-              <li>Co-organized and led programming events and competitions</li>
-              <li>Mentored junior developers in web technologies and best practices</li>
-              <li>Volunteered in organizing tech workshops and hackathons</li>
+              <li>Lead and coordinate a cross-functional team of 4-5 web development members within the domain.</li>
+              <li>Discuss plans, sprint roadmaps, and priorities with the Domain Head, then prioritize and distribute tasks and responsibilities among team members.</li>
+              <li>Spearhead agile ceremonies, code reviews, and user feedback loops for club platforms and campus tech initiatives.</li>
             </ul>
             <div class="card-tags">
-              <span>React</span><span>JavaScript</span><span>Team Leadership</span>
+              <span>Agile Leadership</span><span>Sprint Planning</span><span>Team Coordination</span><span>React</span><span>TypeScript</span>
             </div>
           </div>
         </div>
 
-        <div class="timeline-item exp-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <div class="card-header">
-              <div>
-                <h3 class="card-title">Machine Learning Intern</h3>
-                <p class="card-company">Cognifyz Technologies</p>
-              </div>
-              <span class="card-badge">Internship</span>
-            </div>
-            <p class="card-date">📅 2024</p>
-            <ul class="card-bullets">
-              <li>Worked on AI-ML concepts and Python programming tasks</li>
-              <li>Built data-driven projects including Restaurant Rating and Cuisine Classification</li>
-              <li>Applied data analysis, feature engineering, and model training pipelines</li>
-            </ul>
-            <div class="card-tags">
-              <span>Python</span><span>ML</span><span>Data Analysis</span>
-            </div>
-          </div>
-        </div>
-
+        <!-- Experience 2: Silver Touch -->
         <div class="timeline-item exp-item">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
@@ -289,57 +343,81 @@
               </div>
               <span class="card-badge">Internship</span>
             </div>
-            <p class="card-date">📅 2024</p>
+            <p class="card-date">📅 Jul 2024 – Aug 2024 · Ahmedabad, Gujarat</p>
             <ul class="card-bullets">
-              <li>Gained hands-on experience in Python, Machine Learning, and Data Science</li>
-              <li>Worked on real-world projects and collaborated with senior engineers</li>
-              <li>Developed and improved data pipelines and ML models</li>
+              <li>Applied Python and Machine Learning concepts to practical technical tasks in a professional, enterprise on-site environment.</li>
+              <li>Worked with data-driven approaches and ML techniques, strengthening analytical and problem-solving skills through practical implementation.</li>
+              <li>Evaluated model accuracy against business metrics to assist senior engineers in performance optimization.</li>
             </ul>
             <div class="card-tags">
-              <span>Python</span><span>Data Science</span><span>Machine Learning</span>
+              <span>Python</span><span>Machine Learning</span><span>Data-Driven Strategy</span><span>Problem Solving</span>
             </div>
           </div>
         </div>
 
-        <!-- Education -->
+        <!-- Experience 3: Cognifyz -->
+        <div class="timeline-item exp-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Machine Learning Intern</h3>
+                <p class="card-company">Cognifyz Technologies</p>
+              </div>
+              <span class="card-badge">Internship</span>
+            </div>
+            <p class="card-date">📅 Jan 2025 – Feb 2025 · Remote, India</p>
+            <ul class="card-bullets">
+              <li>Applied Python and AI/ML concepts to project-based machine learning tasks designed to strengthen practical technical knowledge.</li>
+              <li>Built machine learning projects by translating product requirements and predictive algorithms into working implementations.</li>
+              <li>Conducted exploratory data analysis, feature engineering, and model validation to deliver reliable predictive prototypes.</li>
+            </ul>
+            <div class="card-tags">
+              <span>Python</span><span>AI / ML</span><span>Predictive Modeling</span><span>Data Analysis</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education 1: Adani University -->
         <div class="timeline-item edu-item">
           <div class="timeline-dot edu-dot"></div>
           <div class="timeline-card">
             <div class="card-header">
               <div>
-                <h3 class="card-title">B.Tech – Computer Science (AI/ML)</h3>
-                <p class="card-company">Adani University, Ahmedabad</p>
+                <h3 class="card-title">UG-BTECH — Computer Science (AI/ML)</h3>
+                <p class="card-company">Adani University FEST, Ahmedabad, Gujarat</p>
               </div>
               <span class="card-badge edu-badge">Education</span>
             </div>
-            <p class="card-date">📅 2023 – 2027</p>
+            <p class="card-date">📅 Aug 2023 – June 2027</p>
             <ul class="card-bullets">
-              <li>Specialization in Artificial Intelligence and Machine Learning</li>
-              <li>Core subjects: Algorithms, Data Structures, AI, ML, Computer Vision</li>
-              <li>Active member of ASPDC – Web Development Lead</li>
+              <li>Specialization in Artificial Intelligence and Machine Learning with focus on software systems and product analytics.</li>
+              <li>Relevant coursework: Data Structures & Algorithms, Machine Learning Systems, Database Management Systems (SQL), Software Engineering, AI Ethics.</li>
+              <li>Active leadership: Web Development Lead at ASPDC.</li>
             </ul>
             <div class="card-tags">
-              <span>AI/ML</span><span>Computer Science</span>
+              <span>CSE (AI/ML)</span><span>Product Analytics</span><span>Algorithms</span><span>Adani University</span>
             </div>
           </div>
         </div>
 
+        <!-- Education 2: School -->
         <div class="timeline-item edu-item">
           <div class="timeline-dot edu-dot"></div>
           <div class="timeline-card">
             <div class="card-header">
               <div>
-                <h3 class="card-title">Higher Secondary – Science</h3>
+                <h3 class="card-title">Higher Secondary — Science</h3>
                 <p class="card-company">H B Kapadia High School</p>
               </div>
               <span class="card-badge edu-badge">Education</span>
             </div>
             <p class="card-date">📅 2021 – 2023</p>
             <ul class="card-bullets">
-              <li>Science stream with Mathematics and Computer Science</li>
+              <li>Science stream with rigorous foundation in Mathematics, Computer Science, and Physics.</li>
             </ul>
             <div class="card-tags">
-              <span>Science</span><span>Mathematics</span>
+              <span>Mathematics</span><span>Computer Science</span><span>Analytical Foundations</span>
             </div>
           </div>
         </div>
@@ -348,20 +426,20 @@
 
       <!-- Certifications -->
       <div class="certs-section">
-        <h3 class="certs-title">Certifications</h3>
+        <h3 class="certs-title">Certifications & Hackathons</h3>
         <div class="certs-grid">
           <div class="cert-card">
-            <div class="cert-icon">🎓</div>
+            <div class="cert-icon">🐍</div>
             <div>
               <h4>Scientific Computing with Python</h4>
-              <p>FreeCodeCamp</p>
+              <p>FreeCodeCamp Certified</p>
             </div>
           </div>
           <div class="cert-card">
-            <div class="cert-icon">🎓</div>
+            <div class="cert-icon">🌐</div>
             <div>
               <h4>HTML5, CSS & JavaScript</h4>
-              <p>Udemy</p>
+              <p>Udemy Development Credential</p>
             </div>
           </div>
           <div class="cert-card">
@@ -377,314 +455,286 @@
     </div>
   </section>
 
+  <!-- ───────────────── CASE STUDIES ───────────────── -->
+  <section id="case-studies" class="case-studies section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Product Thinking & Strategy</span>
+        <h2 class="section-title">Product Case Studies & Teardowns</h2>
+        <p class="section-subtitle">
+          In-depth teardowns examining user friction, product discovery, prioritization matrices, and business metrics for world-class products.
+        </p>
+      </div>
+
+      <div class="case-grid">
+
+        <!-- Case Study 1: Spotify (From Resume) -->
+        <article class="case-card spotify-card" data-aos="fade-up">
+          <div class="case-card-header spotify-bg">
+            <div class="case-top-tags">
+              <span class="case-brand-tag spotify-tag">🎧 Spotify</span>
+              <span class="case-read-tag">Nov 2026 · Teardown</span>
+            </div>
+            <div class="case-card-icon">🎛️</div>
+          </div>
+          <div class="case-content">
+            <div class="case-metrics-banner">
+              <span class="case-metric-pill">+24% New-Artist Saves</span>
+              <span class="case-metric-pill">-22% Skips</span>
+              <span class="case-metric-pill">RICE: 90.0</span>
+            </div>
+            <h3 class="case-title">Spotify Smarter Discovery: The "Discovery Dial"</h3>
+            <p class="case-desc">
+              Analysed Spotify user reviews and App Store feedback to solve repetitive recommendations in Daily Mixes by introducing a user-controlled "Discovery Dial" to tune familiar vs. fresh music.
+            </p>
+            <div class="case-pillars">
+              <div class="case-pillar-item">
+                <span>🔴</span>
+                <div><strong>Problem:</strong> Repetitive recommendations & algorithmic echo chamber in Daily Mixes.</div>
+              </div>
+              <div class="case-pillar-item">
+                <span>🟢</span>
+                <div><strong>Solution:</strong> "Discovery Dial" letting users modulate 0% familiar comfort to 100% new discovery.</div>
+              </div>
+              <div class="case-pillar-item">
+                <span>⚖️</span>
+                <div><strong>Deliverables:</strong> Full PRD, user stories, wireframe, and success metric trees.</div>
+              </div>
+            </div>
+            <div class="case-actions">
+              <button class="case-btn-primary" data-open-modal="modal-spotify">
+                View Teardown
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 3h6v6M10 14L21 3M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+                </svg>
+              </button>
+              <a href="case-study-spotify.html" class="case-btn-secondary" title="Open Full Standalone Page">
+                Full Page ↗
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case Study 2: Swiggy -->
+        <article class="case-card swiggy-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="case-card-header swiggy-bg">
+            <div class="case-top-tags">
+              <span class="case-brand-tag swiggy-tag">🍔 Swiggy</span>
+              <span class="case-read-tag">11 min read</span>
+            </div>
+            <div class="case-card-icon">🛵</div>
+          </div>
+          <div class="case-content">
+            <div class="case-metrics-banner">
+              <span class="case-metric-pill">+24% Checkout Conv</span>
+              <span class="case-metric-pill">+55% AOV</span>
+              <span class="case-metric-pill">-58% Order Time</span>
+            </div>
+            <h3 class="case-title">Swiggy SmartCart: Frictionless Group Ordering</h3>
+            <p class="case-desc">
+              Tackling the 38% cart abandonment on multi-user food orders via 1-tap WhatsApp shareable carts, Instamart sidecar pairings, and automated UPI split-escrow.
+            </p>
+            <div class="case-pillars">
+              <div class="case-pillar-item">
+                <span>🔴</span>
+                <div><strong>Problem:</strong> "Pass-the-phone" ordering fatigue and awkward post-meal debt chasing.</div>
+              </div>
+              <div class="case-pillar-item">
+                <span>🟢</span>
+                <div><strong>Solution:</strong> Shareable web cart + Instamart sidecar add-ons + 3-min UPI auto-split.</div>
+              </div>
+              <div class="case-pillar-item">
+                <span>⚖️</span>
+                <div><strong>Trade-off:</strong> Cut in-app chat (rely on WhatsApp) to accelerate time-to-market.</div>
+              </div>
+            </div>
+            <div class="case-actions">
+              <button class="case-btn-primary" data-open-modal="modal-swiggy">
+                View Teardown
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 3h6v6M10 14L21 3M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+                </svg>
+              </button>
+              <a href="case-study-swiggy.html" class="case-btn-secondary" title="Open Full Standalone Page">
+                Full Page ↗
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case Study 3: Airbnb -->
+        <article class="case-card airbnb-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="case-card-header airbnb-bg">
+            <div class="case-top-tags">
+              <span class="case-brand-tag airbnb-tag">✈️ Airbnb</span>
+              <span class="case-read-tag">12 min read</span>
+            </div>
+            <div class="case-card-icon">🏡</div>
+          </div>
+          <div class="case-content">
+            <div class="case-metrics-banner">
+              <span class="case-metric-pill">+21% Group Conv</span>
+              <span class="case-metric-pill">3.5x Faster Booking</span>
+              <span class="case-metric-pill">+26 NPS</span>
+            </div>
+            <h3 class="case-title">Airbnb Co-Travel Hub: Collaborative Trip Planning</h3>
+            <p class="case-desc">
+              Streamlining multi-guest marketplace dynamics with collaborative voting boards, AI itinerary proximity matching, and 48-hour split payment escrow.
+            </p>
+            <div class="case-pillars">
+              <div class="case-pillar-item">
+                <span>🔴</span>
+                <div><strong>Problem:</strong> Fragmented chat links & $2,500 organizer credit card upfront barrier.</div>
+              </div>
+              <div class="case-pillar-item">
+                <span>🟢</span>
+                <div><strong>Solution:</strong> Shared voting board + AI transit scorer + 48-hour split escrow hold.</div>
+              </div>
+              <div class="case-pillar-item">
+                <span>⚖️</span>
+                <div><strong>Trade-off:</strong> Adjusted hold window from 48h to 24h on peak dates to protect host calendars.</div>
+              </div>
+            </div>
+            <div class="case-actions">
+              <button class="case-btn-primary" data-open-modal="modal-airbnb">
+                View Teardown
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 3h6v6M10 14L21 3M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+                </svg>
+              </button>
+              <a href="case-study-airbnb.html" class="case-btn-secondary" title="Open Full Standalone Page">
+                Full Page ↗
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ───────────────── PROJECTS ───────────────── -->
   <section id="projects" class="projects section">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Portfolio</span>
-        <h2 class="section-title">Featured Projects</h2>
-        <p class="section-subtitle">A selection of my work in ML and full-stack development</p>
+        <h2 class="section-title">Featured Products & Platforms</h2>
+        <p class="section-subtitle">0-to-1 platforms, business intelligence solutions, and technical AI builds</p>
       </div>
 
       <div class="projects-grid">
 
-        <!-- Project 1 – Featured -->
+        <!-- Project 1: Employee Management System (From Resume) -->
         <div class="project-card featured" data-aos="fade-up">
-          <div class="project-featured-label">⭐ Featured</div>
+          <div class="project-featured-label">⭐ Flagship SaaS</div>
           <div class="project-image-container">
-            <div class="project-placeholder airplane-bg">
-              <div class="project-3d-icon">✈️</div>
+            <div class="project-placeholder employee-bg">
+              <div class="project-3d-icon">📋</div>
             </div>
           </div>
           <div class="project-content">
             <div class="project-meta">
-              <span class="project-type">Machine Learning</span>
+              <span class="project-type">Productivity SaaS · 0 to 1</span>
             </div>
-            <h3 class="project-title">Airplane Ticket Price Prediction</h3>
+            <h3 class="project-title">Employee Management System</h3>
             <p class="project-desc">
-              An AI model that predicts flight ticket prices based on multiple features including airlines,
-              source/destination, departure time, and stops. Uses regression techniques with high accuracy.
+              Built an end-to-end employee and task management platform to eliminate workflow friction, streamline employee records, role assignment, task allocation, and operational progress tracking.
+            </p>
+            <p class="project-desc" style="font-size: 13px; color: #a0b4e8; margin-top: -6px;">
+              <strong>Key PM Features:</strong> Designed key workflow features including role-based access control (RBAC), real-time status tracking, automated email notification alerts, and secure authentication.
             </p>
             <div class="project-stack">
-              <span>Python</span><span>Scikit-learn</span><span>Pandas</span><span>Matplotlib</span><span>Flask</span>
+              <span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>JWT Auth</span><span>REST APIs</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/tirth12345/Airplane-Ticket-Price-Prediction" target="_blank"
-                class="project-link github-link">
+              <a href="https://github.com/tirth12345" target="_blank" class="project-link github-link">
                 <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-                  <path
-                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                  <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
                 </svg>
-                Source Code
+                View Repository
               </a>
             </div>
           </div>
         </div>
 
-        <!-- Project 2 – Featured -->
+        <!-- Project 2: BaatCheet (From Resume) -->
         <div class="project-card featured" data-aos="fade-up" data-aos-delay="100">
-          <div class="project-featured-label">⭐ Featured</div>
+          <div class="project-featured-label">⭐ Flagship Social</div>
           <div class="project-image-container">
-            <div class="project-placeholder house-bg">
-              <div class="project-3d-icon">🏠</div>
+            <div class="project-placeholder baatcheet-bg">
+              <div class="project-3d-icon">💬</div>
             </div>
           </div>
           <div class="project-content">
             <div class="project-meta">
-              <span class="project-type">Machine Learning</span>
+              <span class="project-type">Community & Media Platform</span>
             </div>
-            <h3 class="project-title">Housing Price Prediction</h3>
+            <h3 class="project-title">BaatCheet — Real-Time News Discussion Platform</h3>
             <p class="project-desc">
-              An intelligent ML model that predicts house prices based on various criteria such as location,
-              area, number of rooms, and amenities. Employs multiple regression algorithms for best accuracy.
+              Built a real-time news platform combining live news aggregation, threaded discussions, and video chat to enable deeper user engagement, community retention, and active debate around current events.
+            </p>
+            <p class="project-desc" style="font-size: 13px; color: #a0b4e8; margin-top: -6px;">
+              <strong>Key PM Features:</strong> Designed key product features including live news engagement statistics, secure phone OTP authentication, and structured discussion threads with room moderation.
             </p>
             <div class="project-stack">
-              <span>Python</span><span>Scikit-learn</span><span>NumPy</span><span>Pandas</span><span>Seaborn</span>
+              <span>React</span><span>Node.js</span><span>Socket.io</span><span>WebRTC</span><span>MongoDB</span><span>OTP Auth</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/tirth12345/House_Price-Prediction" target="_blank"
-                class="project-link github-link">
+              <a href="https://github.com/tirth12345" target="_blank" class="project-link github-link">
                 <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-                  <path
-                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                  <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
                 </svg>
-                Source Code
+                View Repository
               </a>
             </div>
           </div>
         </div>
 
-        <!-- Project 3 -->
-        <div class="project-card" data-aos="fade-up" data-aos-delay="150">
+        <!-- Project 3: Power BI Dashboard (From Resume) -->
+        <div class="project-card featured" data-aos="fade-up" data-aos-delay="150">
+          <div class="project-featured-label">⭐ Flagship BI</div>
           <div class="project-image-container">
-            <div class="project-placeholder solar-bg">
-              <div class="project-3d-icon">🌌</div>
+            <div class="project-placeholder powerbi-bg">
+              <div class="project-3d-icon">📊</div>
             </div>
           </div>
           <div class="project-content">
             <div class="project-meta">
-              <span class="project-type">3D / Web</span>
+              <span class="project-type">Business Intelligence & Analytics</span>
             </div>
-            <h3 class="project-title">Solar System – Three.js</h3>
+            <h3 class="project-title">BI Dashboard for Export Performance Analysis</h3>
             <p class="project-desc">
-              An interactive 3D solar system simulation built with Three.js. Features realistic planet
-              orbits, lighting, and user-controlled camera navigation.
+              Built an interactive Microsoft Power BI executive dashboard for Ananta Impex to analyze export revenue, net profit margins, customer cohorts, product line health, international logistics, and financial performance.
+            </p>
+            <p class="project-desc" style="font-size: 13px; color: #a0b4e8; margin-top: -6px;">
+              <strong>Key PM Features:</strong> Developed end-to-end data transformations (Power Query), a structured dimensional star schema data model, and custom DAX-based KPIs to convert raw transactional data into actionable insights for leadership.
             </p>
             <div class="project-stack">
-              <span>Three.js</span><span>JavaScript</span><span>WebGL</span><span>CSS3</span>
+              <span>Microsoft Power BI</span><span>DAX</span><span>Power Query</span><span>SQL</span><span>Data Modeling</span>
             </div>
             <div class="project-links">
               <a href="https://github.com/tirth12345" target="_blank" class="project-link github-link">
                 <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-                  <path
-                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                  <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
                 </svg>
-                GitHub
+                View Analytics Model
               </a>
             </div>
           </div>
         </div>
 
-        <!-- Project 4 -->
-        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="project-image-container">
-            <div class="project-placeholder packpal-bg">
-              <div class="project-3d-icon">📦</div>
-            </div>
-          </div>
-          <div class="project-content">
-            <div class="project-meta">
-              <span class="project-type">Full Stack</span>
-            </div>
-            <h3 class="project-title">PackPal</h3>
-            <p class="project-desc">
-              A full-stack inventory and packing management application. Helps teams coordinate
-              packing operations with real-time tracking and user management.
-            </p>
-            <div class="project-stack">
-              <span>React</span><span>Node.js</span><span>JavaScript</span><span>CSS3</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/tirth12345" target="_blank" class="project-link github-link">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-                  <path
-                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
-                </svg>
-                GitHub
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 5 -->
-        <div class="project-card" data-aos="fade-up" data-aos-delay="250">
-          <div class="project-image-container">
-            <div class="project-placeholder cuisine-bg">
-              <div class="project-3d-icon">🍽️</div>
-            </div>
-          </div>
-          <div class="project-content">
-            <div class="project-meta">
-              <span class="project-type">Machine Learning</span>
-            </div>
-            <h3 class="project-title">Cuisine Classification</h3>
-            <p class="project-desc">
-              A machine learning classifier that identifies cuisine types from ingredient data.
-              Built during internship at Cognifyz Technologies using classification algorithms.
-            </p>
-            <div class="project-stack">
-              <span>Python</span><span>Scikit-learn</span><span>Pandas</span><span>NLP</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/tirth12345" target="_blank" class="project-link github-link">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-                  <path
-                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
-                </svg>
-                GitHub
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 6 -->
-        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="project-image-container">
-            <div class="project-placeholder uber-bg">
-              <div class="project-3d-icon">🚗</div>
-            </div>
-          </div>
-          <div class="project-content">
-            <div class="project-meta">
-              <span class="project-type">Data Science</span>
-            </div>
-            <h3 class="project-title">Uber Booking Status Prediction</h3>
-            <p class="project-desc">
-              A data science project that predicts Uber booking status outcomes using historical
-              ride data. Employs classification models to optimize ride acceptance rates.
-            </p>
-            <div class="project-stack">
-              <span>Python</span><span>Pandas</span><span>Scikit-learn</span><span>Matplotlib</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/tirth12345" target="_blank" class="project-link github-link">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-                  <path
-                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
-                </svg>
-                GitHub
-              </a>
-            </div>
-          </div>
-        </div>
 
       </div>
 
       <div class="projects-footer">
         <a href="https://github.com/tirth12345" target="_blank" class="btn btn-outline">
           <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
-            <path
-              d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+            <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
           </svg>
-          View All Projects on GitHub
+          View More Code & Models on GitHub
         </a>
       </div>
 
-    </div>
-  </section>
-
-  <!-- ───────────────── BLOG ───────────────── -->
-  <section id="blog" class="blog section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Writing</span>
-        <h2 class="section-title">Technical Blogs</h2>
-        <p class="section-subtitle">I write about AI/ML, web development, and tech concepts</p>
-      </div>
-      <div class="blog-grid">
-
-        <article class="blog-card">
-          <div class="blog-image-container">
-            <div class="blog-placeholder blog1-bg">
-              <span class="blog-emoji">🤖</span>
-            </div>
-          </div>
-          <div class="blog-content">
-            <div class="blog-meta">
-              <span class="blog-category">AI / ML</span>
-              <span class="blog-read-time">8 min read</span>
-            </div>
-            <h3 class="blog-title">Unlocking the Potential: Essential Resources for AI/ML Programming in Python</h3>
-            <p class="blog-excerpt">
-              A comprehensive guide to the best libraries, tools, and resources for getting started
-              with AI and ML programming in Python. From NumPy to TensorFlow.
-            </p>
-            <a href="https://tirth12345.github.io/Tirth-Chokshi-Portfolio/1stblog.html" target="_blank"
-              class="blog-read-more">
-              Read Article
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </svg>
-            </a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <div class="blog-image-container">
-            <div class="blog-placeholder blog2-bg">
-              <span class="blog-emoji">📊</span>
-            </div>
-          </div>
-          <div class="blog-content">
-            <div class="blog-meta">
-              <span class="blog-category">Data Science</span>
-              <span class="blog-read-time">10 min read</span>
-            </div>
-            <h3 class="blog-title">Data Visualization for Beginners: A Comprehensive Guide</h3>
-            <p class="blog-excerpt">
-              Learn the fundamentals of data visualization from scratch. Covers Matplotlib, Seaborn,
-              and best practices for presenting data effectively and clearly.
-            </p>
-            <a href="https://tirth12345.github.io/Tirth-Chokshi-Portfolio/3rdblog.html" target="_blank"
-              class="blog-read-more">
-              Read Article
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </svg>
-            </a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <div class="blog-image-container">
-            <div class="blog-placeholder blog3-bg">
-              <span class="blog-emoji">🔍</span>
-            </div>
-          </div>
-          <div class="blog-content">
-            <div class="blog-meta">
-              <span class="blog-category">SEO</span>
-              <span class="blog-read-time">12 min read</span>
-            </div>
-            <h3 class="blog-title">The Ultimate Guide to SEO for Beginners: A Journey to Online Visibility</h3>
-            <p class="blog-excerpt">
-              From keyword research to on-page optimization, this guide covers everything you need to
-              know to improve your website's visibility on search engines.
-            </p>
-            <a href="https://tirth12345.github.io/Tirth-Chokshi-Portfolio/2ndblog.html" target="_blank"
-              class="blog-read-more">
-              Read Article
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </svg>
-            </a>
-          </div>
-        </article>
-
-      </div>
     </div>
   </section>
 
@@ -692,9 +742,9 @@
   <section id="contact" class="contact section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Let's Talk</span>
+        <span class="section-tag">Let's Connect</span>
         <h2 class="section-title">Get In Touch</h2>
-        <p class="section-subtitle">Have a project in mind or just want to say hi? My inbox is always open!</p>
+        <p class="section-subtitle">Interested in discussing product strategy, APM opportunities, or innovative AI products? My inbox is always open!</p>
       </div>
       <div class="contact-grid">
 
@@ -734,27 +784,27 @@
               </div>
               <div>
                 <p class="contact-item-label">Location</p>
-                <p class="contact-item-value">Ahmedabad, Gujarat, India</p>
+                <p class="contact-item-value">Ahmedabad, Gujarat, India (Indian Citizen)</p>
               </div>
             </div>
           </div>
 
           <div class="contact-socials">
-            <h4>Follow Me</h4>
+            <h4>Professional Profiles</h4>
             <div class="social-links">
-              <a href="https://github.com/tirth12345" target="_blank" class="social-btn" id="github-link">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
-                </svg>
-                GitHub
-              </a>
               <a href="https://linkedin.com/in/tirth-chokshi-44b355295" target="_blank" class="social-btn linkedin-btn">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                   <path
                     d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                 </svg>
                 LinkedIn
+              </a>
+              <a href="https://github.com/tirth12345" target="_blank" class="social-btn" id="github-link">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                </svg>
+                GitHub
               </a>
               <a href="https://leetcode.com/tirthchokshi20" target="_blank" class="social-btn leetcode-btn">
                 <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
@@ -772,12 +822,12 @@
             <div class="form-success" id="form-success">
               <div class="success-icon">✅</div>
               <h3>Message Sent!</h3>
-              <p>Thank you! I'll get back to you very soon.</p>
+              <p>Thank you! I will review your message and reply promptly.</p>
             </div>
             <div class="form-fields" id="form-fields">
               <div class="form-row">
                 <div class="form-group">
-                  <label for="name">Full Name *</label>
+                  <label for="name">Your Name *</label>
                   <input type="text" id="name" name="name" placeholder="John Doe" required />
                 </div>
                 <div class="form-group">
@@ -787,12 +837,12 @@
               </div>
               <div class="form-group">
                 <label for="subject">Subject *</label>
-                <input type="text" id="subject" name="subject" placeholder="Project Collaboration" required />
+                <input type="text" id="subject" name="subject" placeholder="APM Opportunity / Product Discussion" required />
               </div>
               <div class="form-group">
                 <label for="message">Message *</label>
                 <textarea id="message" name="message" rows="6"
-                  placeholder="Tell me about your project or just say hi..." required></textarea>
+                  placeholder="Hi Tirth, let's connect regarding a Product Manager role or case study discussion..." required></textarea>
               </div>
               <button type="submit" class="btn btn-primary submit-btn" id="submit-btn">
                 <span class="btn-text">Send Message</span>
@@ -825,15 +875,277 @@
         <div class="footer-logo">
           <span class="logo-bracket">&lt;</span>TC<span class="logo-bracket">/&gt;</span>
         </div>
-        <p class="footer-text">Designed & Built by <strong>Tirth Chokshi</strong> · 2025</p>
+        <p class="footer-text">Designed & Built by <strong>Tirth Chokshi</strong> · Aspiring AI Product Manager · 2025</p>
         <div class="footer-links">
-          <a href="https://github.com/tirth12345" target="_blank">GitHub</a>
           <a href="https://linkedin.com/in/tirth-chokshi-44b355295" target="_blank">LinkedIn</a>
+          <a href="https://github.com/tirth12345" target="_blank">GitHub</a>
           <a href="mailto:tirthchokshi20@gmail.com">Email</a>
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- ───────────────── CASE STUDY MODALS ───────────────── -->
+
+  <!-- Modal 1: Spotify (From Resume) -->
+  <div class="case-modal-backdrop" id="modal-spotify">
+    <div class="case-modal-dialog">
+      <div class="case-modal-header">
+        <div class="modal-header-info">
+          <span class="modal-company-tag spotify-tag">🎧 Spotify · Independent Teardown (Nov 2026)</span>
+          <h2 class="modal-title">Spotify Smarter Discovery: The "Discovery Dial"</h2>
+        </div>
+        <button class="case-modal-close" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="modal-nav-tabs">
+        <button class="modal-tab-btn active" data-tab="spot-p1">1. User Reviews & Pain</button>
+        <button class="modal-tab-btn" data-tab="spot-p2">2. Discovery Dial UX</button>
+        <button class="modal-tab-btn" data-tab="spot-p3">3. PRD & User Stories</button>
+        <button class="modal-tab-btn" data-tab="spot-p4">4. Success Metrics & Goal Tree</button>
+      </div>
+
+      <div class="case-modal-body">
+        <!-- Panel 1 -->
+        <div class="modal-tab-panel active" data-panel="spot-p1">
+          <div class="modal-callout green">
+            <h4>App Store Feedback & The Algorithmic Echo Chamber</h4>
+            <p>
+              Analysed Spotify user reviews and App Store feedback to identify critical pain points around repetitive recommendations and lack of user control over music discovery.
+            </p>
+          </div>
+          <p>
+            <strong>Core Finding:</strong> Collaborative filtering algorithms over-index on historical listens (exploitation) to minimize skips, repeatedly playing the same 15-20 songs in Daily Mixes and trapping listeners in a musical echo chamber.
+          </p>
+          <div class="modal-stats-grid">
+            <div class="modal-stat-box">
+              <div class="modal-stat-val">+24%</div>
+              <div class="modal-stat-label">New-Artist Save Rate</div>
+            </div>
+            <div class="modal-stat-box">
+              <div class="modal-stat-val">-22%</div>
+              <div class="modal-stat-label">Sub-30s Skip Frequency</div>
+            </div>
+            <div class="modal-stat-box">
+              <div class="modal-stat-val">+16%</div>
+              <div class="modal-stat-label">Daily Mix 30-Day Retention</div>
+            </div>
+            <div class="modal-stat-box">
+              <div class="modal-stat-val">RICE 90</div>
+              <div class="modal-stat-label">MVP Priority Score</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2 -->
+        <div class="modal-tab-panel" data-panel="spot-p2">
+          <h4>Proposed Feature: The "Discovery Dial"</h4>
+          <p>An intuitive tuning slider integrated into Daily Mixes, Artist Radios, and Discover Weekly:</p>
+          <ul>
+            <li><strong>Level 1 — Pure Comfort (0–25%):</strong> 90% familiar tracks from Liked Songs and heavy rotation. Perfect for focus and deep work.</li>
+            <li><strong>Level 2 — Balanced Blend (50% Default):</strong> 60% familiar favorites + 40% acoustically adjacent tracks from similar artist clusters.</li>
+            <li><strong>Level 3 — Deep Discovery (75–100%):</strong> 80%+ tracks from unplayed artists and emerging indie creators matching the playlist's acoustic DNA.</li>
+            <li><strong>Instant Queue Recalculation:</strong> Client-side queue re-ordering updates upcoming tracks in &lt;150ms without interrupting active playback.</li>
+          </ul>
+        </div>
+
+        <!-- Panel 3 -->
+        <div class="modal-tab-panel" data-panel="spot-p3">
+          <h4>PRD Specifications & User Stories</h4>
+          <ul>
+            <li><strong>User Story 1 (The Explorer):</strong> <em>"As an active listener, I want to dial my Indie Mix to 85% fresh music, so that I can uncover new underground artists without manually hunting through blogs."</em></li>
+            <li><strong>User Story 2 (The Focus Worker):</strong> <em>"As a student studying for exams, I want to set my Lofi Mix to 10% familiar, so that I get comfort songs without jarring experimental tracks."</em></li>
+            <li><strong>Wireframe Concept:</strong> Embedded responsive slider with real-time feedback tag (e.g. <em>"Currently: 65% Adventurous · 9 new artists queued"</em>).</li>
+            <li><strong>RICE Scoring:</strong> Daily Mix Slider (Reach: 10, Impact: 2.5, Confidence: 90%, Effort: 2.5 wks &rarr; RICE: 90.0). Scoped as P0 MVP.</li>
+          </ul>
+        </div>
+
+        <!-- Panel 4 -->
+        <div class="modal-tab-panel" data-panel="spot-p4">
+          <h4>Success Metrics & Experimentation</h4>
+          <p>
+            <strong>North Star Metric:</strong> New-Artist First-Time Save Rate (NA-SR) — percentage of recommended new artists saved to library.<br/>
+            <strong>Secondary KPIs:</strong> Sub-30s skip rate reduction (-22%), Daily Mix 30-day retention (+16%), Total weekly discovery minutes (+31%).<br/>
+            <strong>Guardrail:</strong> High-dial skip rate capped under 25% to protect user satisfaction.
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <a href="case-study-spotify.html">Read Full Case Study with PRD Artifacts &rarr;</a>
+        <button class="case-btn-secondary case-modal-close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Swiggy -->
+  <div class="case-modal-backdrop" id="modal-swiggy">
+    <div class="case-modal-dialog">
+      <div class="case-modal-header">
+        <div class="modal-header-info">
+          <span class="modal-company-tag swiggy-tag">🍔 Swiggy · Conversion Strategy</span>
+          <h2 class="modal-title">Swiggy SmartCart: Eliminating Group Checkout Friction</h2>
+        </div>
+        <button class="case-modal-close" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="modal-nav-tabs">
+        <button class="modal-tab-btn active" data-tab="swiggy-p1">1. Market Context & Pain</button>
+        <button class="modal-tab-btn" data-tab="swiggy-p2">2. SmartCart Architecture</button>
+        <button class="modal-tab-btn" data-tab="swiggy-p3">3. Scoping & MoSCoW</button>
+        <button class="modal-tab-btn" data-tab="swiggy-p4">4. Growth & Unit Economics</button>
+      </div>
+
+      <div class="case-modal-body">
+        <!-- Panel 1 -->
+        <div class="modal-tab-panel active" data-panel="swiggy-p1">
+          <div class="modal-callout orange">
+            <h4>The 38% Group Cart Drop-Off Problem</h4>
+            <p>
+              Over 40% of weekend evening orders in urban metros involve multiple diners. Passing one phone around or collecting orders on WhatsApp takes an average of 22 minutes, leading to massive cart abandonment.
+            </p>
+          </div>
+          <p>
+            <strong>Core Friction Points:</strong> Dietary restriction confusion, single-restaurant constraints (someone wants dessert from elsewhere), and awkward post-meal UPI debt collection.
+          </p>
+          <div class="modal-stats-grid">
+            <div class="modal-stat-box">
+              <div class="modal-stat-val">+24%</div>
+              <div class="modal-stat-label">Checkout Conversion Rate</div>
+            </div>
+            <div class="modal-stat-box">
+              <div class="modal-stat-val">+55%</div>
+              <div class="modal-stat-label">AOV Lift (₹380 → ₹590)</div>
+            </div>
+            <div class="modal-stat-box">
+              <div class="modal-stat-val">-58%</div>
+              <div class="modal-stat-label">Order Assembly Time</div>
+            </div>
+            <div class="modal-stat-box">
+              <div class="modal-stat-val">+15%</div>
+              <div class="modal-stat-label">Swiggy One Cross-Sell</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2 -->
+        <div class="modal-tab-panel" data-panel="swiggy-p2">
+          <h4>Solution Architecture:</h4>
+          <ul>
+            <li><strong>1-Tap Shareable WhatsApp Web Cart:</strong> No app download required for guests; real-time item attribution and dietary tags synced via WebSockets.</li>
+            <li><strong>Instamart "Sidecar" Additions:</strong> Micro-recommendations from adjacent dark stores (cold drinks, ice cream) picked up along the delivery route with zero added delivery delay.</li>
+            <li><strong>Automated UPI Split Escrow:</strong> 3-minute payment countdown where every participant pays their proportional share directly via UPI push notification.</li>
+          </ul>
+        </div>
+
+        <!-- Panel 3 -->
+        <div class="modal-tab-panel" data-panel="swiggy-p3">
+          <h4>MoSCoW Scoping Decision:</h4>
+          <ul>
+            <li><strong>Must Have (P0):</strong> Shareable web link, real-time cart sync, per-person UPI collect request.</li>
+            <li><strong>Should Have (P1):</strong> Instamart sidecar pairings along driver route.</li>
+            <li><strong>Won't Have (v1):</strong> In-app group voice/text chat (users already coordinate on WhatsApp; building chat creates unnecessary bloat).</li>
+          </ul>
+        </div>
+
+        <!-- Panel 4 -->
+        <div class="modal-tab-panel" data-panel="swiggy-p4">
+          <h4>Organic Acquisition Flywheel</h4>
+          <p>
+            Every group cart introduces 2-3 non-users or dormant users to the frictionless web checkout. Following successful delivery, guest participants receive a personalized ₹100 welcome voucher for their first solo order on the app.
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <a href="case-study-swiggy.html">Read Full Case Study & Deep Dive &rarr;</a>
+        <button class="case-btn-secondary case-modal-close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Airbnb -->
+  <div class="case-modal-backdrop" id="modal-airbnb">
+    <div class="case-modal-dialog">
+      <div class="case-modal-header">
+        <div class="modal-header-info">
+          <span class="modal-company-tag airbnb-tag">✈️ Airbnb · Marketplace Teardown</span>
+          <h2 class="modal-title">Airbnb Co-Travel Hub: Streamlining Group Booking</h2>
+        </div>
+        <button class="case-modal-close" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="modal-nav-tabs">
+        <button class="modal-tab-btn active" data-tab="ab-p1">1. The Group Dilemma</button>
+        <button class="modal-tab-btn" data-tab="ab-p2">2. Co-Travel Hub UX</button>
+        <button class="modal-tab-btn" data-tab="ab-p3">3. Marketplace Trade-offs</button>
+        <button class="modal-tab-btn" data-tab="ab-p4">4. Metrics & Impact</button>
+      </div>
+
+      <div class="case-modal-body">
+        <!-- Panel 1 -->
+        <div class="modal-tab-panel active" data-panel="ab-p1">
+          <div class="modal-callout red">
+            <h4>The $2,500 Lead Organizer Burden</h4>
+            <p>
+              Over 55% of nights booked on Airbnb are for multi-guest trips. Yet 31% of shared wishlists stall because the lead organizer refuses to absorb thousands of dollars on their personal credit card while coordinating through messy chat links.
+            </p>
+          </div>
+          <div class="modal-stats-grid">
+            <div class="modal-stat-box">
+              <div class="modal-stat-val">+21%</div>
+              <div class="modal-stat-label">Group Booking Conv</div>
+            </div>
+            <div class="modal-stat-box">
+              <div class="modal-stat-val">3.5x</div>
+              <div class="modal-stat-label">Faster Booking Velocity</div>
+            </div>
+            <div class="modal-stat-box">
+              <div class="modal-stat-val">-42%</div>
+              <div class="modal-stat-label">Wishlist Abandonment</div>
+            </div>
+            <div class="modal-stat-box">
+              <div class="modal-stat-val">+26 pts</div>
+              <div class="modal-stat-label">Organizer NPS Score</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2 -->
+        <div class="modal-tab-panel" data-panel="ab-p2">
+          <h4>Multiplayer Features Introduced:</h4>
+          <ul>
+            <li><strong>Interactive Shared Canvas & Anonymous Budgeting:</strong> Rapid reaction polling on listings with private budget sliders to identify group price overlap without awkward peer disclosure.</li>
+            <li><strong>AI Itinerary & Proximity Matcher:</strong> Maps listing proximity to planned group activities (beaches, dining, nightlife) and provides an automated Match Score (0-100%).</li>
+            <li><strong>48-Hour Split Payment Escrow Hold:</strong> Holds the property calendar for 48 hours while sending individual payment links to all members, confirming only when fully funded.</li>
+          </ul>
+        </div>
+
+        <!-- Panel 3 -->
+        <div class="modal-tab-panel" data-panel="ab-p3">
+          <h4>Balancing Buyer UX with Host (Supplier) Needs:</h4>
+          <p>
+            Hosts initially worried about calendar locks during peak seasons. We aligned incentives by offering Superhosts who enable 48h holds a 5% boost in search algorithm visibility, and dynamically tightened the hold window to 24 hours during holiday high-demand dates.
+          </p>
+        </div>
+
+        <!-- Panel 4 -->
+        <div class="modal-tab-panel" data-panel="ab-p4">
+          <h4>North Star & Strategic Metric Tree:</h4>
+          <p>
+            <strong>North Star Metric:</strong> Multi-guest Wishlist to Booking Conversion Rate (+21%).<br/>
+            <strong>Cycle Velocity:</strong> Reduced time-to-booking from 14 days to 4.2 days.<br/>
+            <strong>Supplier Guardrail:</strong> Unfunded expired calendar blocks held strictly under 2.5%.
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <a href="case-study-airbnb.html">Read Full Case Study & PRD Specification &rarr;</a>
+        <button class="case-btn-secondary case-modal-close">Close</button>
+      </div>
+    </div>
+  </div>
 
   <script src="main.js"></script>
 </body>

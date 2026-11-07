@@ -1,7 +1,105 @@
 /**
  * TIRTH CHOKSHI PORTFOLIO — main.js
- * Three.js Hero Background, GSAP Animations, Contact Form
+ * PM Sprint Preloader, Three.js Hero, GSAP Animations, Case Modals, Contact Form
  */
+
+/* ═══════════════════════════════════════════
+   PM SPRINT LAUNCH PRELOADER
+═══════════════════════════════════════════ */
+(function initPmPreloader() {
+  const preloader = document.getElementById('pm-preloader');
+  if (!preloader) return;
+
+  const progressBar = document.getElementById('pm-progress-bar');
+  const percentText = document.getElementById('pm-progress-percent');
+  const statusText = document.getElementById('pm-status-text');
+  const steps = document.querySelectorAll('.pipeline-step');
+  const lines = document.querySelectorAll('.pipeline-line');
+
+  const pmPhases = [
+    { threshold: 0,  step: 1, text: 'Discovering user friction & research cohorts...' },
+    { threshold: 28, step: 2, text: 'Evaluating RICE prioritization & unit metrics...' },
+    { threshold: 60, step: 3, text: 'Synthesizing PRDs, wireframes & architecture...' },
+    { threshold: 88, step: 4, text: 'Launching 0-to-1 Product Portfolio...' },
+  ];
+
+  let isDone = false;
+
+  function updateUI(val) {
+    if (progressBar) progressBar.style.width = val + '%';
+    if (percentText) percentText.textContent = Math.round(val) + '%';
+
+    for (let i = pmPhases.length - 1; i >= 0; i--) {
+      if (val >= pmPhases[i].threshold) {
+        if (statusText) {
+          const currentHTML = `<span class="pm-status-spinner"></span> ${pmPhases[i].text}`;
+          if (statusText.innerHTML.trim() !== currentHTML.trim()) {
+            statusText.innerHTML = currentHTML;
+          }
+        }
+
+        steps.forEach((st, idx) => {
+          if (idx + 1 < pmPhases[i].step) {
+            st.classList.add('completed');
+            st.classList.remove('active');
+          } else if (idx + 1 === pmPhases[i].step) {
+            st.classList.add('active');
+            st.classList.remove('completed');
+          } else {
+            st.classList.remove('active', 'completed');
+          }
+        });
+
+        lines.forEach((ln, idx) => {
+          if (idx + 1 < pmPhases[i].step) {
+            ln.classList.add('filled');
+          } else {
+            ln.classList.remove('filled');
+          }
+        });
+        break;
+      }
+    }
+  }
+
+  function finishLoader() {
+    if (isDone) return;
+    isDone = true;
+    updateUI(100);
+    steps.forEach(st => { st.classList.add('completed'); st.classList.remove('active'); });
+    lines.forEach(ln => ln.classList.add('filled'));
+    if (statusText) statusText.innerHTML = `✅ Product Experience Shipped!`;
+
+    setTimeout(() => {
+      preloader.classList.add('loaded');
+      setTimeout(() => {
+        if (preloader.parentNode) preloader.parentNode.removeChild(preloader);
+      }, 700);
+    }, 400);
+  }
+
+  const startTime = performance.now();
+  const DURATION = 1900; // 1.9 seconds total duration
+
+  function frame(now) {
+    if (isDone) return;
+    const elapsed = now - startTime;
+    const progress = Math.min(100, (elapsed / DURATION) * 100);
+    updateUI(progress);
+
+    if (progress < 100) {
+      requestAnimationFrame(frame);
+    } else {
+      finishLoader();
+    }
+  }
+  requestAnimationFrame(frame);
+
+  // Click / tap anywhere to instantly skip
+  preloader.addEventListener('click', () => {
+    finishLoader();
+  });
+})();
 
 /* ═══════════════════════════════════════════
    THREE.JS HERO — Particle Network + Floating Geometric
@@ -185,11 +283,11 @@
   if (!el) return;
 
   const roles = [
-    'FullStack Developer',
-    'Machine Learning Engineer',
-    'AI/ML Enthusiast',
-    'Open Source Contributor',
-    'Technical Blogger',
+    'Aspiring AI Product Manager',
+    'Product × Data × Technology',
+    'Technical Product Manager',
+    'AI Product Strategist',
+    'Growth & Product Enthusiast',
   ];
   let rIdx = 0, cIdx = 0, isDeleting = false;
 
@@ -255,10 +353,10 @@
     { scrollTrigger: { trigger: '.projects-grid', start: 'top 80%', once: true }, y: 0, opacity: 1, duration: 0.7, stagger: 0.12, ease: 'power3.out' }
   );
 
-  // Blog cards stagger
-  gsap.fromTo('.blog-card',
+  // Case study cards & blog cards stagger
+  gsap.fromTo('.case-card, .blog-card',
     { y: 50, opacity: 0 },
-    { scrollTrigger: { trigger: '.blog-grid', start: 'top 85%', once: true }, y: 0, opacity: 1, duration: 0.7, stagger: 0.15, ease: 'power3.out' }
+    { scrollTrigger: { trigger: '.case-grid, .blog-grid', start: 'top 85%', once: true }, y: 0, opacity: 1, duration: 0.7, stagger: 0.15, ease: 'power3.out' }
   );
 
   // Contact grid
@@ -299,7 +397,7 @@
    3D PROJECT CARD TILT
 ═══════════════════════════════════════════ */
 (function initCardTilt() {
-  document.querySelectorAll('.project-card, .blog-card').forEach(card => {
+  document.querySelectorAll('.project-card, .blog-card, .case-card').forEach(card => {
     card.addEventListener('mousemove', e => {
       const rect   = card.getBoundingClientRect();
       const cx     = rect.left + rect.width  / 2;
@@ -469,6 +567,89 @@
   })();
 })();
 
+
+/* ═══════════════════════════════════════════
+   CASE STUDY MODAL CONTROLLER
+═══════════════════════════════════════════ */
+(function initCaseModals() {
+  const backdrops = document.querySelectorAll('.case-modal-backdrop');
+  if (!backdrops.length) return;
+
+  function openModal(id) {
+    const modal = document.getElementById(id);
+    if (!modal) return;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(modal) {
+    if (!modal) return;
+    modal.classList.remove('open');
+    // Only reset body overflow if no other modal is open
+    const anyOpen = document.querySelector('.case-modal-backdrop.open');
+    if (!anyOpen) {
+      document.body.style.overflow = '';
+    }
+  }
+
+  // Trigger buttons
+  document.querySelectorAll('[data-open-modal]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const targetId = btn.getAttribute('data-open-modal');
+      openModal(targetId);
+    });
+  });
+
+  // Close buttons inside modals
+  document.querySelectorAll('.case-modal-close').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const modal = btn.closest('.case-modal-backdrop');
+      closeModal(modal);
+    });
+  });
+
+  // Click outside to close
+  backdrops.forEach(backdrop => {
+    backdrop.addEventListener('click', e => {
+      if (e.target === backdrop) {
+        closeModal(backdrop);
+      }
+    });
+  });
+
+  // ESC key listener
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      const openOne = document.querySelector('.case-modal-backdrop.open');
+      if (openOne) closeModal(openOne);
+    }
+  });
+
+  // Tab switching inside modals
+  document.querySelectorAll('.modal-nav-tabs').forEach(tabGroup => {
+    const tabBtns = tabGroup.querySelectorAll('.modal-tab-btn');
+    const modalDialog = tabGroup.closest('.case-modal-dialog');
+    const panels = modalDialog ? modalDialog.querySelectorAll('.modal-tab-panel') : [];
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tabTarget = btn.getAttribute('data-tab');
+
+        tabBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        panels.forEach(panel => {
+          if (panel.getAttribute('data-panel') === tabTarget) {
+            panel.classList.add('active');
+          } else {
+            panel.classList.remove('active');
+          }
+        });
+      });
+    });
+  });
+})();
 
 /* ═══════════════════════════════════════════
    FOOTER YEAR

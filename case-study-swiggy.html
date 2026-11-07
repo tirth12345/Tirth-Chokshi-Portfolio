@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swiggy SmartCart PM Case Study | Tirth Chokshi</title>
+  <link rel="icon" type="image/png" href="icon.png" />
+  <meta name="description"
+    content="Swiggy SmartCart Product Teardown by Tirth Chokshi – Solving group ordering friction, cart abandonment, and multi-vendor pairings in food delivery and quick commerce." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .cs-page { padding: 120px 0 80px; }
+    .cs-back-nav { margin-bottom: 32px; }
+    .cs-back-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 600;
+      padding: 8px 16px; border-radius: 50px; background: rgba(79, 138, 255, 0.1);
+      border: 1px solid rgba(79, 138, 255, 0.25); transition: var(--transition);
+    }
+    .cs-back-btn:hover { background: rgba(79, 138, 255, 0.2); transform: translateX(-4px); }
+    .cs-header { margin-bottom: 48px; border-bottom: 1px solid var(--border); padding-bottom: 40px; }
+    .cs-brand-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 14px; border-radius: 50px; font-size: 13px; font-weight: 600;
+      background: rgba(252, 128, 25, 0.15); border: 1px solid rgba(252, 128, 25, 0.35);
+      color: #fc8019; margin-bottom: 18px;
+    }
+    .cs-title {
+      font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 5vw, 48px);
+      font-weight: 800; line-height: 1.2; margin-bottom: 16px;
+      background: linear-gradient(135deg, #fff 0%, #ffe3d1 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .cs-subtitle { font-size: 18px; color: var(--text-muted); line-height: 1.6; max-width: 860px; margin-bottom: 24px; }
+    .cs-meta-row { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; color: var(--text-dim); font-size: 13px; }
+    .cs-meta-item { display: flex; align-items: center; gap: 6px; }
+    .cs-meta-item strong { color: var(--text); }
+
+    .cs-impact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 36px 0; }
+    .cs-impact-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 20px; text-align: center; backdrop-filter: blur(10px);
+    }
+    .cs-impact-num {
+      display: block; font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 800;
+      color: #fc8019; margin-bottom: 4px;
+    }
+    .cs-impact-label { font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+
+    .cs-layout { display: grid; grid-template-columns: 280px 1fr; gap: 48px; align-items: start; }
+    .cs-sidebar {
+      position: sticky; top: 100px; background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px; backdrop-filter: blur(15px);
+    }
+    .cs-toc-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 16px; }
+    .cs-toc-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .cs-toc-list a {
+      color: var(--text-dim); text-decoration: none; font-size: 13.5px; transition: var(--transition);
+      display: block; padding: 4px 8px; border-radius: 6px;
+    }
+    .cs-toc-list a:hover { color: var(--text); background: rgba(79, 138, 255, 0.1); }
+
+    .cs-body { min-width: 0; }
+    .cs-section { margin-bottom: 56px; }
+    .cs-section h2 {
+      font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700;
+      color: #fff; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+      border-bottom: 1px solid var(--border); padding-bottom: 12px;
+    }
+    .cs-section h3 { font-size: 19px; font-weight: 600; color: var(--text); margin: 24px 0 12px; }
+    .cs-section p { color: var(--text-muted); font-size: 15.5px; line-height: 1.8; margin-bottom: 16px; }
+    .cs-section ul, .cs-section ol { color: var(--text-muted); font-size: 15px; line-height: 1.7; margin-bottom: 20px; padding-left: 24px; }
+    .cs-section li { margin-bottom: 8px; }
+
+    .cs-callout {
+      background: rgba(79, 138, 255, 0.08); border-left: 4px solid var(--accent);
+      border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 24px 0;
+    }
+    .cs-callout.orange { background: rgba(252, 128, 25, 0.08); border-left-color: #fc8019; }
+    .cs-callout h4 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .cs-callout p { margin-bottom: 0; font-size: 14.5px; }
+
+    .persona-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 24px 0; }
+    .persona-card {
+      background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 24px;
+    }
+    .persona-header { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+    .persona-avatar {
+      width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-size: 22px; background: rgba(255, 255, 255, 0.08);
+    }
+    .persona-name { font-size: 16px; font-weight: 700; color: var(--text); }
+    .persona-tag { font-size: 12px; color: #fc8019; }
+
+    .cs-table-wrap { overflow-x: auto; margin: 24px 0; }
+    .cs-table {
+      width: 100%; border-collapse: collapse; text-align: left; font-size: 14px;
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .cs-table th {
+      background: rgba(255, 255, 255, 0.05); padding: 14px 16px; font-weight: 600;
+      color: var(--text); border-bottom: 1px solid var(--border);
+    }
+    .cs-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); color: var(--text-muted); }
+    .cs-table tr:last-child td { border-bottom: none; }
+    .cs-table .score { font-weight: 700; color: #fc8019; }
+
+    .wireframe-box {
+      background: #090e1f; border: 1.5px dashed var(--border2); border-radius: var(--radius);
+      padding: 28px; margin: 24px 0; font-family: monospace; font-size: 13px; color: #8a9bbf;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 1024px) {
+      .cs-layout { grid-template-columns: 1fr; }
+      .cs-sidebar { display: none; }
+      .cs-impact-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .cs-impact-grid { grid-template-columns: 1fr; }
+      .persona-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar scrolled">
+    <div class="nav-container">
+      <a href="index.html#home" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>TC<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#home" class="nav-link">Home</a></li>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#experience" class="nav-link">Experience</a></li>
+        <li><a href="index.html#case-studies" class="nav-link active">Case Studies</a></li>
+        <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        <li>
+          <a href="Tirth_Chokshi_PM_Resume.pdf" download target="_blank" class="nav-resume-btn">
+            Resume
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="cs-page">
+    <div class="container">
+      <div class="cs-back-nav">
+        <a href="index.html#case-studies" class="cs-back-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          Back to Portfolio
+        </a>
+      </div>
+
+      <header class="cs-header">
+        <div class="cs-brand-badge">
+          <span>🍔</span> Swiggy · Product Strategy & Conversion Optimization
+        </div>
+        <h1 class="cs-title">Swiggy SmartCart: Eliminating Group Checkout Friction</h1>
+        <p class="cs-subtitle">
+          Tackling the 38% cart abandonment rate on multi-user orders across Food Delivery and Quick Commerce through shareable WhatsApp carts, cross-merchant micro-pairings, and automated UPI split-escrow.
+        </p>
+        <div class="cs-meta-row">
+          <div class="cs-meta-item">👤 <strong>Author:</strong> Tirth Chokshi (Aspiring AI PM)</div>
+          <div class="cs-meta-item">⏱️ <strong>Read Time:</strong> 11 mins</div>
+          <div class="cs-meta-item">🎯 <strong>Core Competencies:</strong> Conversion Funnels, Fintech / UPI, Hyperlocal Logistics, Growth</div>
+        </div>
+
+        <div class="cs-impact-grid">
+          <div class="cs-impact-card">
+            <span class="cs-impact-num">+24%</span>
+            <span class="cs-impact-label">Multi-User Checkout Conversion Rate</span>
+          </div>
+          <div class="cs-impact-card">
+            <span class="cs-impact-num">+55%</span>
+            <span class="cs-impact-label">Average Order Value (₹380 → ₹590)</span>
+          </div>
+          <div class="cs-impact-card">
+            <span class="cs-impact-num">-58%</span>
+            <span class="cs-impact-label">Order Cycle Time (22m → 9.2m)</span>
+          </div>
+          <div class="cs-impact-card">
+            <span class="cs-impact-num">+15%</span>
+            <span class="cs-impact-label">Swiggy One Subscription Cross-Sell</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="cs-layout">
+        <aside class="cs-sidebar">
+          <div class="cs-toc-title">Table of Contents</div>
+          <ul class="cs-toc-list">
+            <li><a href="#summary">1. Executive Summary</a></li>
+            <li><a href="#problem">2. Market Context & Pain</a></li>
+            <li><a href="#personas">3. User Personas</a></li>
+            <li><a href="#solution">4. Product Features (SmartCart)</a></li>
+            <li><a href="#prioritization">5. Prioritization & Scoping</a></li>
+            <li><a href="#metrics">6. Metrics & Unit Economics</a></li>
+            <li><a href="#rollout">7. GTM & Organic Acquisition</a></li>
+            <li><a href="#reflection">8. Retrospective & Takeaways</a></li>
+          </ul>
+        </aside>
+
+        <article class="cs-body">
+
+          <!-- 1. Executive Summary -->
+          <section id="summary" class="cs-section">
+            <h2>1. Executive Summary</h2>
+            <div class="cs-callout orange">
+              <h4>TL;DR: The Growth Thesis</h4>
+              <p>
+                In Indian urban metros, more than 40% of weekend evening food deliveries are shared by roommates, families, or coworkers. Yet food apps force a single phone or manual WhatsApp coordination. This friction creates high decision fatigue, prolonged ordering times (averaging 22 minutes), and a staggering 38% cart abandonment rate before payment. Swiggy SmartCart introduces a 1-tap WhatsApp shareable web cart, cross-store sidecar ordering (from Instamart), and automated UPI split payments, transforming group ordering into a frictionless conversion funnel.
+              </p>
+            </div>
+            <p>
+              In the intensely competitive food delivery market against Zomato, unit economics and customer lifetime value (LTV) hinge on Average Order Value (AOV) and purchase frequency. SmartCart enables Swiggy to capture larger basket sizes, reduce customer support disputes over splits, and turn every group order into a low-CAC organic acquisition loop for non-Swiggy users.
+            </p>
+          </section>
+
+          <!-- 2. Problem Statement -->
+          <section id="problem" class="cs-section">
+            <h2>2. Market Context & User Friction</h2>
+            <h3>The Nightmare of "Pass the Phone"</h3>
+            <p>
+              When a team of 5 in Bangalore or Gurgaon decides to order dinner:
+            </p>
+            <ul>
+              <li><strong>Coordination Friction:</strong> One person becomes the "Order Scribe", opening WhatsApp, asking for dishes, dietary constraints (Jain, vegetarian, gluten-free), and navigating endless menu pages.</li>
+              <li><strong>Single-Restaurant Bottleneck:</strong> Someone wants Biryani from Paradise, but another person wants dessert or cold drinks that the primary restaurant either overcharges for or doesn't supply.</li>
+              <li><strong>The "Awkward Bill Split" Problem:</strong> After ordering, the host must take a screenshot of the receipt, calculate taxes and delivery fee proportions, post their UPI QR code on WhatsApp, and politely chase colleagues for ₹185 three times.</li>
+            </ul>
+
+            <div class="cs-callout">
+              <h4>Quantitative Data Signal</h4>
+              <p>
+                Analytics show that carts containing 4+ items and taking longer than 15 minutes to assemble suffer a <strong>38% abandonment rate</strong>. Users get frustrated, compromise on cooking Maggi, or walk to a nearby street vendor.
+              </p>
+            </div>
+          </section>
+
+          <!-- 3. Personas -->
+          <section id="personas" class="cs-section">
+            <h2>3. Target Personas</h2>
+            <div class="persona-grid">
+              <div class="persona-card">
+                <div class="persona-header">
+                  <div class="persona-avatar">💼</div>
+                  <div>
+                    <div class="persona-name">Rohan, 28</div>
+                    <div class="persona-tag">Engineering Manager · Tech Park</div>
+                  </div>
+                </div>
+                <p><strong>Goal:</strong> Order lunch for his late-working sprint squad quickly without spending 20 minutes aggregating orders.</p>
+                <p><strong>Pain Point:</strong> Tired of footing the entire ₹1,800 bill on his credit card and waiting days for team members to settle.</p>
+              </div>
+              <div class="persona-card">
+                <div class="persona-header">
+                  <div class="persona-avatar">🎉</div>
+                  <div>
+                    <div class="persona-name">Ananya, 24</div>
+                    <div class="persona-tag">Roommate & Host · Whitefield</div>
+                  </div>
+                </div>
+                <p><strong>Goal:</strong> Host 4 friends for an IPL cricket match and get food + cold soda delivered in time for the toss.</p>
+                <p><strong>Pain Point:</strong> Frustrated that ordering food and drinks requires placing two separate orders with duplicate delivery fees.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 4. Solution -->
+          <section id="solution" class="cs-section">
+            <h2>4. Product Solution: Swiggy SmartCart</h2>
+            <p>
+              We designed an end-to-end multi-user ordering experience that addresses social coordination, basket expansion, and fintech settlement:
+            </p>
+
+            <h3>Feature 1: 1-Tap WhatsApp Shareable Web Cart</h3>
+            <p>
+              The host taps <em>"Order with Friends"</em> on Swiggy and gets an instant WhatsApp share link.
+            </p>
+            <ul>
+              <li><strong>No App Download Required:</strong> Invitees open a lightweight, blazing-fast PWA/mobile web view.</li>
+              <li><strong>Real-Time Item Attribution:</strong> Each participant's avatar appears next to their selected dish, with automatic spice level and dietary tags.</li>
+              <li><strong>Host Lock Controls:</strong> The host can set a spending limit or lock the cart when everyone has made their selection.</li>
+            </ul>
+
+            <h3>Feature 2: "Sidecar" Multi-Merchant Additions (Instamart Bridge)</h3>
+            <p>
+              Tapping into Swiggy's dense Instamart dark store network:
+            </p>
+            <ul>
+              <li>Before final checkout, SmartCart suggests: <em>"Add 2L Thums Up & Vanilla Ice Cream from Instamart (2 mins away) for ₹85?"</em></li>
+              <li>Swiggy's dispatch routing algorithm assigns the delivery partner to pick up the sidecar items while the main restaurant prepares the meal, resulting in zero delivery delay and boosting AOV by 28%.</li>
+            </ul>
+
+            <h3>Feature 3: Integrated UPI Auto-Split Escrow</h3>
+            <p>
+              Instead of the host paying 100% upfront:
+            </p>
+            <ul>
+              <li>Each participant receives an instant UPI Collect request (via PhonePe, Google Pay, or Paytm) for their exact share (items + equal split of taxes/delivery).</li>
+              <li>A 3-minute payment countdown displays live on everyone's screen. If one person delays, the host can tap <em>"Cover for Alex"</em> with 1 click to proceed immediately.</li>
+            </ul>
+
+            <div class="wireframe-box">
+              [ SMARTCART FLOW DIAGRAM ]<br/>
+              Host initiates Group Cart ──> Generates Unique Tokenized Link<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br/>
+              Friends Join via Web ──> Add Items + Diet Specs (Real-Time WebSocket Sync)<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br/>
+              Instamart Sidecar Upsell ──> 3-Minute Split UPI Collect Prompts ──> Order Fired to Kitchen
+            </div>
+          </section>
+
+          <!-- 5. Prioritization -->
+          <section id="prioritization" class="cs-section">
+            <h2>5. Feature Prioritization & Scoping</h2>
+            <p>
+              Using the MoSCoW prioritization framework to balance engineering feasibility with customer impact:
+            </p>
+            <div class="cs-table-wrap">
+              <table class="cs-table">
+                <thead>
+                  <tr>
+                    <th>Capability</th>
+                    <th>Classification</th>
+                    <th>Rationale & Trade-off</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Shareable Web Link & Cart Sync</strong></td>
+                    <td><span style="color:#fc8019;font-weight:700">Must Have (P0)</span></td>
+                    <td>Core unlocking mechanism; removes the barrier of requiring all users to install Swiggy.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Per-Person Bill Breakdown & UPI Push</strong></td>
+                    <td><span style="color:#fc8019;font-weight:700">Must Have (P0)</span></td>
+                    <td>Solves the post-meal debt chasing friction directly at the point of purchase.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Instamart Sidecar Add-ons</strong></td>
+                    <td><span style="color:#4f8aff;font-weight:700">Should Have (P1)</span></td>
+                    <td>Significant AOV booster, but requires logistics routing validation to ensure restaurant food remains warm.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>In-App Voice Chat / Polls</strong></td>
+                    <td><span style="color:#ff6b6b;font-weight:700">Won't Have (v1)</span></td>
+                    <td>Cut from scope: Users already use WhatsApp for conversation. Building chat would add bloat without differentiated value.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- 6. Metrics -->
+          <section id="metrics" class="cs-section">
+            <h2>6. Metrics & Business Impact</h2>
+            <h3>North Star Metric</h3>
+            <p>
+              <strong>Multi-User Cart Checkout Conversion Rate:</strong> The percentage of initiated group carts that result in a paid, successful restaurant order.
+            </p>
+
+            <h3>Key Supporting Metrics</h3>
+            <ul>
+              <li><strong>Average Order Value (AOV):</strong> Target expansion from ₹380 to ₹590 (+55%).</li>
+              <li><strong>Cart Assembly Duration:</strong> Time elapsed from link generation to payment completion (target: reduce from 22m to &lt; 10m).</li>
+              <li><strong>Viral Guest-to-User Conversion:</strong> % of non-Swiggy guests who sign up after experiencing the web checkout (Target: 14%).</li>
+              <li><strong>Swiggy One Cross-Sell:</strong> If the host is a Swiggy One member, all participants enjoy free delivery, driving secondary subscription curiosity.</li>
+            </ul>
+
+            <h3>Guardrail Metrics</h3>
+            <ul>
+              <li><strong>Delivery Partner Dispatch Delay:</strong> Sidecar pickups must not add more than 3.5 minutes to the total fulfillment SLA.</li>
+              <li><strong>UPI Payment Timeout Rate:</strong> Failed or expired split payments must not exceed 4% of total group transactions.</li>
+            </ul>
+          </section>
+
+          <!-- 7. GTM -->
+          <section id="rollout" class="cs-section">
+            <h2>7. GTM & Organic Acquisition Flywheel</h2>
+            <p>
+              Traditional user acquisition for food delivery apps requires ₹300-₹500 CAC in paid ads and discount codes. SmartCart is designed as a self-sustaining viral loop:
+            </p>
+            <ul>
+              <li><strong>The Growth Multiplier:</strong> Every group order involves an average of 3.2 individuals. Of these, ~35% are either dormant users or lack the Swiggy app.</li>
+              <li><strong>Frictionless First Taste:</strong> By experiencing seamless web participation with zero sign-up wall, the barrier to try Swiggy drops to zero.</li>
+              <li><strong>Post-Order Incentive:</strong> Upon successful meal delivery, all guest participants receive a personalized SMS: <em>"Hope you enjoyed the meal with Rohan! Here's ₹100 off your next solo lunch on the Swiggy app."</em></li>
+            </ul>
+          </section>
+
+          <!-- 8. Retrospective -->
+          <section id="reflection" class="cs-section">
+            <h2>8. Retrospective & Strategic Takeaways</h2>
+            <div class="cs-callout">
+              <h4>PM Self-Awareness</h4>
+              <p>
+                <strong>Critical Trade-off:</strong> The hardest edge case was handling payment failures during multi-person UPI split. If 3 out of 4 friends pay, but the 4th friend's bank server times out, cancelling the entire order causes massive customer anger. We solved this by creating the <em>"Host Guarantee"</em>: the host can pre-authorize covering temporary deficits with a single swipe, while Swiggy automatically sends an automated UPI link to the remaining friend post-checkout.
+              </p>
+            </div>
+            <p>
+              Great PM execution is about designing resilient failure modes. By protecting the joyful moment of group dining from financial awkwardness, Swiggy SmartCart cements habitual loyalty across high-value urban cohorts.
+            </p>
+          </section>
+
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-bracket">&lt;</span>TC<span class="logo-bracket">/&gt;</span>
+        </div>
+        <p class="footer-text">Designed & Written by <strong>Tirth Chokshi</strong> · Aspiring AI Product Manager</p>
+        <div class="footer-links">
+          <a href="index.html#case-studies">All Case Studies</a>
+          <a href="https://linkedin.com/in/tirth-chokshi-44b355295" target="_blank">LinkedIn</a>
+          <a href="mailto:tirthchokshi20@gmail.com">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
+
